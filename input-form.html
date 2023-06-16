@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        #register{
+
+        }
+        .forms{
+            background-color: white;
+            border: 0px solid white;
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500;
+            height: 500;
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="forms">
+        <header>
+            <h2>Registration Form</h2>
+            <img src="https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg" alt="logo" width="100" height="100">
+        </header>
+        <form id="register" action="get">
+            Name
+            <input type="text" name="Name"  placeholder="Username" required autofocus><br>
+            Email
+            <input type="email" name="mail" placeholder="mail" required><br>
+            Female
+            <input type="date" name="DateOfBirth"><br>
+            Age
+            <input type="number" name="age" min="18" max="50"><br>
+            Gender<br>
+            Male
+            <input type="radio" name="gender" value="male"><br>
+            Female
+            <input type="radio" name="gender" value="female"><br>
+            Department
+            <select name="department" id="department">
+                <option value="Medicine">Medicine</option>
+                <option value="engineering">Engineering</option>
+                <option value="arts">Arts</option>
+            </select><br>
+            Type a message here...<br>
+            <textarea name="message" id="msg" cols="10" rows="5"></textarea><br>
+            <input id="button" type="submit" style=" background-color: rgb(29, 142, 233); padding: 15px; width: 130px;">
+        </form>
+    </div>
+</body>
+</html>

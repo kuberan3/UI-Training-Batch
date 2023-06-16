@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form sample</title>
+</head>
+<style>
+    body{
+        background-color: rgb(179, 184, 188);
+    }
+    #input-form{
+            width: 350px;
+            height: 520px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 50px;
+            background-color: white;
+            border: 0px solid wheat;
+            border-radius: 30px;
+
+    }
+    input{
+        border: none;
+        border-bottom: 1px solid black;
+        
+    }
+    #button{
+        background-color: blue;
+        padding: 30px;  
+        margin-left: 120px;
+        border: none;
+        border-radius: 20px;
+
+    }
+    #in{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    img{
+        padding: 20px;
+    }
+   
+</style>
+<body>
+    
+        <form action="post" id="input-form">
+            <h2 style="text-align: center;">Register</h2>
+            <nav id="logo" >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1176px-Google_%22G%22_Logo.svg.png" width="40" width="40" alt="google">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1200px-Facebook_f_logo_%282021%29.svg.png" alt="facebook" width="40" width="40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="github" width="40" width="40">
+                    <img src="https://img.freepik.com/free-icon/linkedin_318-187585.jpg" alt="linkedin" width="40" width="40">
+            </nav>
+            <input id="in" type="text" placeholder="Username" name="username" required><br>
+            <input id="in" type="text" name="email" type="email" placeholder="Email" required><br>
+            <input id="in" type="password" name="password" placeholder="password" required><br>
+            <input id="in" type="password" name="password" placeholder="Confirm Password" required><br>
+            <input  id="button" type="submit" style=" background-color: rgb(29, 142, 233); padding: 15px; width: 130px;">
+        </form>
+   
+</body>
+</html>
