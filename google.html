@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Google</title>
+    <script src="https://kit.fontawesome.com/cf602690d0.js" crossorigin="anonymous"></script>
    <style>
         #nav{
             float: right;
@@ -14,31 +15,135 @@
         #container{
            padding-top: 150px;
            text-align: center;
-        
+            width: 100%;
         }
         #main{
             text-align: center;
+            
         }
         #search-box{
-            margin-left: 300px;
-           border: 1px solid black;
-            font-size: 10px;
+            
+           border: 0.5px solid black;
+            font-size: 5px;
             border-radius: 30px;
             font-weight: 3px;
-            width: 750px;
+            width: 40%;
         }
         #search{
-            width: 500px;
+            width: 70%;
             height: 35px;
            border: 0px;
+           outline: none;
+        }
+        #tool{
+            float: right;
         }
 
         ::placeholder{
-            font-size: large;
+            font-size: 15px;
+        }
+        #search-box:hover{
+            box-shadow: 2px 2px 5px rgb(175, 168, 168), -2px -2px 5px rgb(218, 211, 211);
+        }
+        #scr{
+            padding-right: 15px;
+        }
+        #mic{
+            padding-right: 15px;
+            
+        }
+        #camera button{
+            background-color: white;
+            height: 35px;
+            border: none;
         }
        
-        #scr{
-            pos
+        #mic button{
+            background-color: white;
+            height: 35px;
+            border: none;
+        }
+        #camera{
+            padding-right: 20px;
+        }
+        #btn{
+            padding-top: 30px;
+            border: 0px;
+        }
+        #bt{
+            width: 200px;
+            padding-left: 20px;
+            background-color: wh;
+        }
+        #btn button{
+            border: 0px solid rgb(218, 225, 228);
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 40px;
+            background-color: whitesmoke;
+            border-radius: 5px;
+        }
+        #language{
+            text-decoration: none;
+        }
+        footer{
+            position: fixed;
+            bottom: 0px;
+            background-color: whitesmoke;
+            width: 100%;
+            margin: 0px;
+        }
+        #kanadi{
+            width: 50px;
+
+        }
+        #india{
+            padding-left: 50px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #bottom_two{
+            padding-top: 20px;
+            height: 40px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #bottom_one{
+            height: 40px;
+            border-bottom: 0.2px solid black;
+        }
+        #lt{
+            align-items: center;
+            float: left;
+            padding-right: 30px;
+        }
+        #rt{
+        
+            float: right;
+            padding-right: 30px;
+        }
+        #lk{
+            padding-right: 7px;
+        }
+        #glass{
+            border: 0px;
+            background-color: white;
+            height: 35px;
+            float: left;
+            padding-left: 35px;
+            border-radius: 40px;
+        }
+        #glass button{
+            border: 30px;
+        }
+        #bt:hover{
+            box-shadow: 2px 2px 5px whitesmoke, -2px -2px 5px whitesmoke;
+            cursor: pointer;
+        }
+        #element-box{
+            display: flex;
+            justify-content: center;
+        }
+        #element:hover{
+            text-decoration: underline;
         }
         
     </style>
@@ -46,25 +151,63 @@
 <body>
     <header>
         <div id="nav"> 
-            <a id="element" href="#" style="padding-right: 10px; margin-top: 2px;" >Gmail</a>
-            <a id="element" href="#" style="padding-right: 10px;">Images</a>
-            <a id="element" href="#" style="padding-right: 10px;"><img src="https://static.thenounproject.com/png/10563-200.png" alt="apps" width="35px" height="35px" ></a>
-            <img id="element" src="https://pbs.twimg.com/profile_images/1439953850471911426/s4pE9SYa_400x400.jpg" alt="ppic" width="40px" height="40px"  style="border-radius: 50px;">
+            <a id="element" href="#" style="padding-right: 25px; margin-top: 2px;" >Gmail</a>
+            <a id="element" href="#" style="padding-right: 25px;">Images</a>
+            <a id="element" href="#" style="padding-right: 25px;"><img src="https://static.thenounproject.com/png/10563-200.png" alt="apps" width="30px" height="30px" ></a>
+            <img id="element"  src="https://pbs.twimg.com/profile_images/1439953850471911426/s4pE9SYa_400x400.jpg" alt="ppic" width="35px" height="35px"  style="border-radius: 50px;">
         </div>
     </header>
     <main>
         <div id="container">
             <img src="https://static.vecteezy.com/system/resources/previews/010/930/001/non_2x/google-logo-icon-illustration-free-vector.jpg" alt="google" width="400px" height="200px" >
         </div>
-
-        <div id="main">
+        <div id="element-box">
             <div id="search-box">
-                <span id="scr"><img src="https://e7.pngegg.com/pngimages/106/628/png-clipart-magnifying-glass-computer-icons-lens-detective-magnifying-glass-glass-lens-thumbnail.png" alt="" width="35px" height="35px"></span>
-                <span><input  type="text" name="" id="search" placeholder="              Search Google or Type a URL" ></span>
-                <span><img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png" alt="" width="35px" height="35px"></span>
-                <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Google_Lens_Icon.svg/1200px-Google_Lens_Icon.svg.png" alt="" width="35px" height="35px"></span>
+                <span><button id="glass" > <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #00040d;"></i></button></span>
+                <span><input  type="text" name="" id="search" placeholder="Search Google or Type a URL" ></span>
+                <span id="tool">
+                <span id="mic"><button > <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png" alt="" width="25px" height="25px"></button></span>
+                <span id="camera"><button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Google_Lens_Icon.svg/1200px-Google_Lens_Icon.svg.png" alt="" width="25px" height="25px"></button></span>
+                </span>
+            </div>
+        </div>
+        <div id="main">
+            
+            <div id="btn">
+                <button id="bt">Google Search</button>
+                <button id="bt">I'm Feeling Lucky</button>
+            </div>
+            <div style="padding-top: 20px; font-size: 12px;">
+                <span>Google also Offers :    </span>
+                <span id="lk"><a href="#">हिन्दी</a></span>
+                <span id="lk"><a href="#"> বাংলা</a></span>
+                <span id="lk"><a href="#">తెలుగు</a></span>
+                <span id="lk"><a href="#">मराठी</a></span>
+                <span id="lk"><a href="#">தமிழ் </a></span>
+                <span id="lk"><a href="#">ગુજરાતી</a></span>
+                <span id="lk"><a href="#">ಕನ್ನಡ</a></span>
+                <span id="lk"><a href="#">മലയാളം</a></span>
+                <span id="lk"><a href="#">ਪੰਜਾਬੀ</a></span>
             </div>
         </div>
     </main>
+    <footer>
+        <div id="bottom_one">
+        <p id="india">India</p>
+        </div>
+        
+        <div id="bottom_two">
+            <div id="bottom_left">
+                <span id="lt">About</span>
+                <span id="lt">Advertising</span>
+                <span id="lt">Business</span>
+                <span id="lt">Home Search Work</span>
+                <span id="rt">Privacy</span>
+                <span id="rt">Terms</span>
+                <span id="rt">Settings</span>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
