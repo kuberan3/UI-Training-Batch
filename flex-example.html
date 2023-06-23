@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf602690d0.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            
+            width: 100%;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+      
+        #left-menu{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 50%;
+            justify-content: space-between;
+        }
+        #right-menu{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between
+        }
+        
+        h3{
+            font-family: ;
+        }
+        #search-box{
+            width: 300px;
+            border: 0.1px solid black;
+            border-radius: 9px;
+        }
+        #glass{
+            height: 30px;
+            width: 30px;
+            border: none;
+            background-color: white;
+        }
+        input{
+            
+            width: 80%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        #notification{
+            height: 30px;
+            width: 30px;
+            background-color: white;
+            border: none;
+            font-size: large;
+        }
+        #right-menu > *{
+            margin-left: 20px;
+        }
+        main{
+            display: flex;
+            width: 100%;
+        }
+        #item{
+            min-width: 100px;
+            width: 150px;
+            max-width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="left-menu">
+            <p>Captain</p>
+            
+        </div>
+        <div id="right-menu">
+            <div id="search-box">
+                <input  type="text" style="border: 0; border-radius: 5px; margin-left: 10px;">
+                <button id="glass" ><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #00040d;"></i></button>
+            </div>
+            <button id="notification"><i class="fa-regular fa-bell" style="color: #00040a;"></i></button>
+            <img src="https://cdn.mos.cms.futurecdn.net/XNhvgRe9SuFmPcoLymMT7e-1200-80.jpg" style="width: 40px; height: 40px; border-radius: 40px;" alt="profile">
+        </div>    
+    </header>
+    <main>
+        <div id="item"><img src="https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg" alt="" height="150px" width="150px"></div>
+        <div id="item"><img src="https://www.giantfreakinrobot.com/wp-content/uploads/2021/02/chris-evans-captain-america-900x506.jpg" alt="" height="150px" width="150px"></div>
+        <div id="item"><img src="" alt=""></div>
+        <div id="item"><img src="" alt=""></div>
+        <div id="item"><img src="" alt=""></div>
+        <div id="item"><img src="" alt=""></div>
+        <div id="item"><img src="" alt=""></div>
+    </main>
+</body>
+</html>
