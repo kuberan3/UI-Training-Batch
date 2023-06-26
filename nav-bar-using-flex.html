@@ -8,27 +8,41 @@
         header{
             background-color: aqua;
             width: 100%;
-        }
-        nav{
             display: flex;
-            justify-content: flex-end;
-            height: 10%;
+            justify-content: space-between;
+        }
+        #left{
+            display: flex;
+            padding: 10px;
             
         }
-        nav > div{
+        #right{
+            display: flex;
             padding: 10px;
-            background-color: aqua;
         }
+        #left > div{
+            margin-right: 10px;
+            padding: 10px;
+            background-color: aliceblue;
+        }
+        #right > div{
+            margin-right: 10px;
+            padding: 10px;
+            background-color: aliceblue;
+        }
+       
     </style>
 </head>
 <body>
     <header>
-        <nav>
+        <div id="left">
             <div>Home</div>
-            <div>Menu</div>
+            <div>Menu</div> 
+        </div>
+        <div id="right">
             <div>SignUp</div>
             <div>Signin</div>
-        </nav>
+        </div>
     </header>
 </body>
 </html>
