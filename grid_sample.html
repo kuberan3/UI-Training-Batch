@@ -1,7 +1,238 @@
-<html>
-    <head>
-        <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-sample</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-areas: 'header header header header header'
+                                    'aside  main main main main'
+                                        'footer footer footer footer footer';
+                                        row-gap: 10px;
+        }
+        header{
+            grid-area: header;
+            background-color: rgb(59, 52, 52);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        header h1{
+            color: rgb(212, 22, 22);
+            padding-left: 20px;
+        }
+        aside{
+            grid-area: aside;
+        }
+        main{
+            grid-area: main;
+        }
+        footer{
+            grid-area: footer;
+        }
+        main > div{
+            width: 300px;
+            height: 500px;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-align: center;
+            padding: 5px;
+        }
+        main{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        #movie > p{
+            color: gold;
+        }
+        #book{
+            height: 10%;
+            width: 40%;
+            background-color: skyblue;
+            border-radius: 15px;
+            border: none;
+        }
+        #book:hover{
+            box-shadow: 5px 5px 5px rgb(68, 64, 64), -5px -5px 5px rgb(68, 64, 64);
+        }
+        #input{
+            border: none;
+            border-radius: 5px;
+            height: 25px;
+            width: 200%;
+            padding-left: 10px;
+        }
+        footer{
+            background-color: rgb(50, 45, 45);
+            color: white;
+            text-align: center;
+        }
+        aside{
+            /* background-color: rgb(106, 102, 102); */
+            border-radius: 5px;
+            border: none;
+            padding-right: 15px;
             
-        </style>
-    </head>
-</html>    
+        }
+        aside > p{
+            background-color: aliceblue;
+            padding: 10px;
+            height: 25px;
+            border: none;
+            margin-left: 10px;
+        }
+        @media screen and ( max-width: 600px ) and (min-width:400px){
+            #container{
+            display: grid;
+            grid-template-areas: 'header header header header header'
+                                    'aside aside aside aside aside'
+                                    'main  main main main main'
+                                        'footer footer footer footer footer';
+                                        row-gap: 5px;
+            }
+            main{
+            display: grid;
+            grid-template-columns: auto auto;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+
+        }
+        @media  screen and (max-width: 400px ) and (min-width:200px) {
+
+            #container{
+            display: grid;
+            grid-template-areas: 'header header header header header'
+                                    'aside aside aside aside aside'
+                                    'main  main main main main'
+                                        'footer footer footer footer footer';
+                                        row-gap: 5px;
+            }
+            main{
+            display: grid;
+            grid-template-columns: auto;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        }
+         @media  screen and (max-width: 900px ) and (min-width:600px) {
+
+            #container{
+            display: grid;
+            grid-template-areas: 'header header header header header'
+                                    'aside aside aside aside aside'
+                                    'main  main main main main'
+                                        'footer footer footer footer footer';
+                                        row-gap: 5px;
+            }
+            main{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+           <div style="padding-right: 10px;">
+            <h1>Marvel</h1>
+           </div>
+           <div>
+            <input id="input" type="text" placeholder="Search a Movie Here">
+           </div>
+        </header>
+        <aside>
+            <p>Movies</p>
+            <p>Series</p>
+            <p>Cartoon</p>
+            <p>Anime</p>
+            <p>Animation</p>
+            <p>3D</p>
+        </aside>
+        <main>
+            <div id="movie" ><img src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://static.toiimg.com/photo/msid-92954243/92954243.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://www.91-cdn.com/hub/wp-content/uploads/2023/03/Marvel-movies-in-order-1200x900.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://s3.amazonaws.com/com.marvel.terrigen/prod/captainmarvel_lob_crd_06.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://lumiere-a.akamaihd.net/v1/images/p_doctorstrange_19918_516f94d3.jpeg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://cdn.kobo.com/book-images/7e060fa5-3a91-4ed1-94a3-57274b53e233/1200/1200/False/marvel-s-black-panther-4.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://i.ytimg.com/vi/uXVMNk5mJl4/movieposter_en.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://lumiere-a.akamaihd.net/v1/images/p_doctorstrange_19918_516f94d3.jpeg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://s3.amazonaws.com/com.marvel.terrigen/prod/captainmarvel_lob_crd_06.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://www.91-cdn.com/hub/wp-content/uploads/2023/03/Marvel-movies-in-order-1200x900.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+            <div id="movie" ><img src="https://static.toiimg.com/photo/msid-92954243/92954243.jpg" alt="" width="250px" height="300px">
+                <h1>Marvel</h1>
+                <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <button id="book">Book Now</button>
+            </div>
+        </main>
+        <footer>
+            <p>@2001 copy right by Kuberan</p>
+        </footer>
+    </div>
+</body>
+</html>
