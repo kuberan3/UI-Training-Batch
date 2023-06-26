@@ -6,16 +6,12 @@
     <script src="https://kit.fontawesome.com/cf602690d0.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-        body{
-            margin: 0;
-        }
         header{
             
             width: 100%;
             display: flex; 
             justify-content: space-between;
             align-items: center;
-            flex-direction: row;
         }
       
         #left-menu{
@@ -23,7 +19,10 @@
             align-items: center;
             flex-direction: row;
             width: 50%;
-            justify-content: space-between;
+            
+        }
+        #left-menu > * {
+            padding-right: 10px;
         }
         #right-menu{
             display: flex;
@@ -56,28 +55,57 @@
             width: 30px;
             background-color: white;
             border: none;
-            font-size: large;
+            
         }
         #right-menu > *{
             margin-left: 20px;
         }
+        #item{
+            width: 250px;
+            height: 200px;
+            display: flex;
+            min-height: 50px;
+            max-height: 50;
+            min-width: 50px;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 5px;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
         main{
             display: flex;
-            width: 100%;
+            flex-wrap: wrap;
+            margin-left: 20px;
+            margin-right: auto;
+            height: 100%;
+              width: 70%;
         }
-        #item{
-            min-width: 100px;
-            width: 150px;
-            max-width: 200px;
-            height: 150px;
+        #container{
+            display: flex;
+            flex-direction: row;
+        }
+        aside{
+            display: flex;
+            flex-wrap: wrap;
+            width: 30%;
+            height: 100%;
+            border: 1px double black;
+            box-shadow: 2px 2px 5px , -2px -2px 5px;
+            border-radius: 7px;
+        }
+        aside p{
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <header>
         <div id="left-menu">
+            <h3>Misson</h3>
             <p>Captain</p>
-            
+            <p>Falcon</p>
         </div>
         <div id="right-menu">
             <div id="search-box">
@@ -88,14 +116,35 @@
             <img src="https://cdn.mos.cms.futurecdn.net/XNhvgRe9SuFmPcoLymMT7e-1200-80.jpg" style="width: 40px; height: 40px; border-radius: 40px;" alt="profile">
         </div>    
     </header>
+    <div id="container">
     <main>
-        <div id="item"><img src="https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg" alt="" height="150px" width="150px"></div>
-        <div id="item"><img src="https://www.giantfreakinrobot.com/wp-content/uploads/2021/02/chris-evans-captain-america-900x506.jpg" alt="" height="150px" width="150px"></div>
-        <div id="item"><img src="" alt=""></div>
-        <div id="item"><img src="" alt=""></div>
-        <div id="item"><img src="" alt=""></div>
-        <div id="item"><img src="" alt=""></div>
-        <div id="item"><img src="" alt=""></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
+        <div id="item"><img src="https://wallpapers.com/images/featured/y74bmaanacy4qh29.jpg" alt="" style="height: 200px; width: 250px;"></div>
     </main>
+
+    <aside>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, nemo recusandae, quos omnis necessitatibus iusto suscipit doloribus iste distinctio pariatur nesciunt inventore optio excepturi quae minus, nulla voluptatum incidunt dolorum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, tenetur asperiores natus quidem quod blanditiis doloribus molestiae animi eveniet numquam dolor, quaerat unde sequi, ad necessitatibus voluptates dolorum ratione aspernatur?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, provident quasi quisquam dolorum, dolore distinctio labore minima nihil illo asperiores animi ipsa voluptates. Fugit, velit distinctio nemo minus beatae aliquid.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, nemo recusandae, quos omnis necessitatibus iusto suscipit doloribus iste distinctio pariatur nesciunt inventore optio excepturi quae minus, nulla voluptatum incidunt dolorum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, tenetur asperiores natus quidem quod blanditiis doloribus molestiae animi eveniet numquam dolor, quaerat unde sequi, ad necessitatibus voluptates dolorum ratione aspernatur?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, provident quasi quisquam dolorum, dolore distinctio labore minima nihil illo asperiores animi ipsa voluptates. Fugit, velit distinctio nemo minus beatae aliquid.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, nemo recusandae, quos omnis necessitatibus iusto suscipit doloribus iste distinctio pariatur nesciunt inventore optio excepturi quae minus, nulla voluptatum incidunt dolorum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, tenetur asperiores natus quidem quod blanditiis doloribus molestiae animi eveniet numquam dolor, quaerat unde sequi, ad necessitatibus voluptates dolorum ratione aspernatur?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, provident quasi quisquam dolorum, dolore distinctio labore minima nihil illo asperiores animi ipsa voluptates. Fugit, velit distinctio nemo minus beatae aliquid.</p>
+    </aside>
+    </div>
 </body>
 </html>
