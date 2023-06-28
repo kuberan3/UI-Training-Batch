@@ -13,8 +13,14 @@ header{
     top: 0;
 }
 
-
-
+#menu:hover #menu{
+    #menu{
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 50px;
+    }
+}
 
 #menu{
     display: block;
@@ -30,18 +36,19 @@ header{
         display: block;
         position: absolute;
         top: 40px;
+        right: 20px;
     }
 }
 #demo a{
     text-decoration: none;
-    padding: 10px;
+    /* padding: 10px; */
     padding-bottom: 10px;
     padding-top: 10px;
     width: 80px;
    
 color: black; 
-font-weight: bold;
-margin-right: 20px;
+font-weight: 600;
+/* margin-right: 20px; */
 font-size: medium;
 }
 #demo{
@@ -57,7 +64,7 @@ font-size: medium;
     color: black; 
     font-weight: bold;
     margin-right: 20px;
-    font-size: medium;
+    font-size: 16px;
 }
 #left > img{
     margin-left: 25px;
@@ -115,12 +122,14 @@ font-size: medium;
 #demo{
     border: none;
     background-color: white;
-    font-size: large;
+    font-size: 14px;
+    font-weight: 600;
 }
 #blocks{
     border: none;
     background-color: white;
-    font-size: large;
+    font-size: 14px;
+    font-weight: 600;
 }
 #banner{
     background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
@@ -304,7 +313,7 @@ footer{
     width: 25%;
     text-align: center;
     background-color: #f5f6fb;
-    /* padding: 40px 30px; */
+    padding: 40px 30px;
     padding-top: 40px;
     padding-bottom: 30px;
     margin: 16px;
@@ -338,7 +347,7 @@ footer{
 }
 #rate{
     width: 25% ;
-    padding: 0 64px;
+    /* padding: 0 64px; */
  
 }
 #sample-video{
