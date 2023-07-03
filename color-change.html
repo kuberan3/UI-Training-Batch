@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change colour</title>
+    <style>
+        #button{
+            width: 10%;
+            height: 4%;
+            background-color: rgb(212, 197, 226);
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <button id="button" onclick="changeColor()">Click Me!</button>
+    </main>
+</body>
+<script>
+    function changeColor(){
+        let bgk= document.getElementById("main")
+        alert('Colour is going to Change')
+        let i=100
+        setInterval(function(){
+            i=i-1
+            if(i%2==0)
+            {
+                bgk.style.backgroundColor="black"
+            }
+            else{
+                bgk.style.backgroundColor="white"
+            }
+            
+
+        },100)
+    }
+</script>
+</html>

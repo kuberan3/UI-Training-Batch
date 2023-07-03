@@ -2,15 +2,28 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
-header{
+nav{
+background-color: white;
+    width: 100%;
+    height: 77px;
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    width: 100vw;
-    padding-top: 15px;
+    align-items: center;
+    padding: 0 28px;
+    padding-top: 0px;
+    padding-right: 28px;
+    padding-bottom: 0px;
+    padding-left: 28px;
+    box-sizing: border-box;
     position: fixed;
-    background-color: white;
-    top: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
+    background-position: left;
+    background-size: cover;
 }
 
 #menu:hover #menu{
@@ -20,6 +33,37 @@ header{
         top: 40px;
         right: 50px;
     }
+}
+#text-p{
+
+	color:  rgb(152,152,164);
+
+ 
+    width: 100%;
+    max-width: 1100px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: #8b8b99;
+    text-align: center;
+    padding-top: 32px;
+   
+}
+#text-center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#right{
+display:flex;
+align-item:center;
+justify-content:center;
+}
+#right a{
+margin-top:5px;
 }
 
 #menu{
@@ -45,35 +89,48 @@ header{
     padding-bottom: 10px;
     padding-top: 10px;
     width: 80px;
-   
+   font-family: 'Poppins', sans-serif;
 color: black; 
 font-weight: 600;
-/* margin-right: 20px; */
+
 font-size: medium;
 }
 #demo{
     width: 100px;
-    margin-top: -3px;
+   
+}
+
+#watch-video{
+color: black;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 28px;
+    cursor: pointer;
+	text-decoration:none;
+font-family: 'Poppins', sans-serif;
+	
+}
+
+.dropdown-blocks{
+	    display: block;
+    display: inline-block;
+    
+
+
+}
+.dropdown-blocks a{
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 24px;
+    cursor: pointer;
 }
 
 
-
-
-#right > a{
-    text-decoration: none ;
-    color: black; 
-    font-weight: bold;
-    margin-right: 20px;
-    font-size: 16px;
-}
 #left > img{
     margin-left: 25px;
 }
-#demo > option{
-    background-color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
+
 #menu{
     display: block;
     display: none;
@@ -84,6 +141,7 @@ font-size: medium;
     border-top: 2px solid rgb(193, 227, 141);
     margin-top: 10px;
     padding-top: 10px;
+margin-right:380px;
 
 }
 #demo:hover{
@@ -100,22 +158,23 @@ font-size: medium;
     padding-bottom: 10px;
     padding-top: 10px;
     width: 80px;
+
+	color: black;
+    font-weight: 600;
+    font-size: 14px;
+
 }
-#demo{
-    width: 70px;
-}
+
 #buy{
-    padding: 10px;
-    background-color: rgb(177,213,73);
-    border: none;
-    border-radius: 5px;
-    padding-left: 34px;
-    padding-right: 34px;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    margin-right: 50px;
-    font-weight: bold;
+        font-size: 12px;
+    font-weight: 600;
     color: white;
+    background-color: rgb(170, 210, 54);
+    padding: 9px 34px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 16px;
     cursor: pointer;
 }
 
@@ -125,12 +184,7 @@ font-size: medium;
     font-size: 14px;
     font-weight: 600;
 }
-#blocks{
-    border: none;
-    background-color: white;
-    font-size: 14px;
-    font-weight: 600;
-}
+
 #banner{
     background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
     width: 100%;
@@ -139,18 +193,20 @@ font-size: medium;
 
 }
 #banner-h{
-    width: 100%;
+        width: 100%;
     max-width: 1100px;
     font-size: 44px;
     font-weight: 600;
     letter-spacing: 8.8px;
     line-height: 1.2;
     text-align: center;
+    margin: 0;
+	
+
+	
 }
-#banner > p{
-    color:  rgb(152,152,164);
-}
-/* #text-wrap{ */
+
+
 #banner{
     padding-top: 30px;
     display: flex;
@@ -170,13 +226,15 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: stretch;
-    margin: 0% auto;
+    
 }
 #step1{
     width: 25%;
     background-color: rgb(89,204,166);
-    height: 25%;
-    padding: 112px 48px;
+    padding-top: 112px;
+    padding-right: 48px;
+    padding-bottom: 112px;
+    padding-left: 48px;
     text-align: center;
     color: white;
     box-sizing: border-box;  
@@ -184,26 +242,41 @@ main{
     flex-direction: column;
     justify-content: stretch;
     line-height: 1.5;
+   
 }
 #step1 i{
-    padding-bottom: 30px;
+   
+font-size: 96px;
+    transition: all 0.3s;
 }
 #step2 i{
-    padding-bottom: 30px;
+  font-size: 96px;
+    transition: all 0.3s;
 }
+
 #step3 i{
-    padding-bottom: 30px;
+  font-size: 96px;
+    transition: all 0.3s;
 }
+
 #step4 i{
-    padding-bottom: 30px;
+    font-size: 96px;
+    transition: all 0.3s;
 }
+
 #step1 i:hover{
     font-weight: bolder;
 }
+#step-no{
+font-weight: 600;
+    font-size: 24px;
+	padding-top:5px;
+padding-bottm:10px;
+}
 #step2{
     width: 25%;
-    height: 25%;
-    padding: 112px 48px;
+ 
+  
     text-align: center;
     background-color: rgb(144,172,64);
     color: white;
@@ -212,11 +285,19 @@ main{
     flex-direction: column;
     justify-content: stretch;
     line-height: 1.5;
+
+padding-top: 112px;
+    padding-right: 48px;
+    padding-bottom: 112px;
+    padding-left: 48px;
 }
 #step3{
     width: 25%;
-    height: 25%;
-    padding: 112px 48px;
+    
+padding-top: 112px;
+    padding-right: 48px;
+    padding-bottom: 112px;
+    padding-left: 48px;
     text-align: center;
     background-color: rgb(227,180,118);
     color: white;
@@ -228,8 +309,12 @@ main{
 }
 #step4{
     width: 25%;
-    height: 25%;
-    padding: 112px 48px;
+  
+    
+padding-top: 112px;
+    padding-right: 48px;
+    padding-bottom: 112px;
+    padding-left: 48px;
     text-align: center;
     background-color: rgb(245,157,173)    ;
     color: white;
@@ -241,38 +326,34 @@ main{
 }
 #store{
 
-    display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgb(246,238,226);
+    width: 100%;
+    background-color: #f7eee2;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-align: center;
 }
 #store > h1{
-    font-size: 44px;
+       font-size: 44px;
     font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
 }
 #store  p{
     color: rgb(157, 150, 150);
 }
 
 #store-container{
-    width: 100%;
+   width: 100%;
+    max-width: 1140px;
     display: flex;
-    /* padding-top: 40px; */
-    /* flex-wrap: wrap; */
-  
-    /* margin: 0 auto; */
-    padding-bottom: 50px;
-    justify-content: space-around;
+    justify-content: stretch;
+    margin: 0 auto;
     
 }
 #store-item{
+     width: 25%;
     text-align: center;
-    display: flex;
-        flex-direction: column;
-        width: 25%;
-        padding-top: 30px;
+    padding: 24px;
 }
 #store-item > h1{
     /* padding: 24px; */
@@ -292,40 +373,66 @@ main{
 }
 
 footer{
-    background-color: black;
-    color: #ffffff;
-    width: 100%;
+    background-color: #232323;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     text-align: center;
-    height: 70px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 #shop{
     text-align: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
+   	padding-top:75px;
+	padding-bottom:75px;
+display: block;
+}
+
+#store > h1{
+font-size: 44px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
 }
 #shop-worker{
+   width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    justify-content: space-around;
+    align-items: center;
 }
 #worker{
+    width: 25%;
+
     width: 25%;
     text-align: center;
     background-color: #f5f6fb;
     padding: 40px 30px;
-    padding-top: 40px;
-    padding-bottom: 30px;
     margin: 16px;
     border-top-left-radius: 45px;
     border-bottom-left-radius: 45px;
     border-bottom-right-radius: 45px;
     transition: box-shadow 0.3s;
+display:block;
 }
 #worker img{
     width: 80px;
     margin-bottom: 25px;
     border-radius: 50%;
+}
+#worker p{
+    font-size: 14px;
+    color: #8b8b99;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    margin: 0;
+}
+#worker h3{
+text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 0px;
 }
 #ratings{
     width: 100%;
@@ -359,9 +466,18 @@ footer{
     font-weight: 400px;
 }
 #contact{
+        display: block;
+}
+#fms{
+width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    justify-content: space-around;
+padding-top: 100px;
+    padding-right: 0px;
+    padding-bottom: 100px;
+    padding-left: 0px;
 }
 #form{
     display: flex;
@@ -371,17 +487,21 @@ footer{
 #contact-us{
     padding: 30px;
     width: 50%;
-
-}
-#meet{
-
-    width: 40%;
-    
 }
 #meet-right{
-    width: 70%;
-    margin-top: 60px;
+width: 40%;
+padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+ }
+#contact-us p{
+font-size: 16px;
+    font-weight: 400;
+    color: #8b8b99;
+    letter-spacing: 0.5px;
 }
+
 #meet-right p{
     font-size: 16px;
     font-weight: 400;
@@ -392,11 +512,15 @@ footer{
     font-size: 44px;
 }
 #form > input{
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #8b8b99;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    border: 1px solid  #e5e6ec;
     border-radius: 5px;
     height: 35px;
+    font-size: large;
 }
 #text-wrap > h1{
     font-size: 50px;
@@ -410,34 +534,31 @@ footer{
 }
 #logos{
 
-    background-color: rgb(226,179,117);
-    margin: auto;
-    padding: 40px;
+    
+	
+	display: inline-block;
+    background-color: #e3b375;
     border-radius: 50%;
+    padding: 40px;
+    color: white;
+    transition: all 0.3s;
+
+	padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
 }
-#contact-us-left{
-    padding: 60px;
-    margin-right: 30px;
-    margin-left: 30px;
-}
-/* #logos > i{
-    font-size: 60px;
-} */
+
 #follow-us{
     display: flex;
     width: 100%;
     justify-content: stretch;
 }
 #contact-us h1{
-    padding-bottom: 20px;
+    
     font-size: 44px;
 }
-#contact-us-left p{
-    font-size: 16px;
-    font-weight: 400;
-    color: #8b8b99;
-    letter-spacing: 0.5px;
-}
+
 
 #follow-left{
     width: 65%;
@@ -493,23 +614,42 @@ font-weight: 500;
     color: #91ac41;
 }
 #heading{
-    color: rgb(149,149,162);
+        max-width: 700px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+    color: #8b8b99;
     letter-spacing: 0.5px;
+    margin-bottom: 55px;
 }
 #worker p{
     color: rgb(149,149,162);
 }
-/* #logos:hover{
-    width: 80px;
-    height: 70px;
-    font-size: 70px;
-} */
+
 
 #logos:hover{
     scale: 120%;
 }
 
-
+#store-item > p{
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    color: #8b8b99;
+}
+#final-submit{
+    width: 40%;
+                  background-color: rgb(170, 210, 53);
+                  border: none;
+                  border-radius: 5px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: white;
+                  /* padding-top: 9px;
+    padding-right: 34px;
+    padding-bottom: 9px;
+    padding-left: 34px; */
+}
 
 @media screen and (max-width:600px){
     
@@ -541,9 +681,7 @@ font-weight: 500;
     display: flex;
     flex-direction: column;
 }
-#contact-us{
-    width: 100%;
-}
+
 #meet{
     width: 100%;
 }
@@ -557,6 +695,23 @@ font-weight: 500;
 #follow-right{
     width: 100%;
 }
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#fms{
+    flex-direction: column;
+}
+#form{
+    width: 50%;
+}
+#meet-right{
+    width: 70%;
+}
+#final-submit{
+    width: 70%;
+}
 #ratings{
     display: flex;
     flex-direction: column;
@@ -568,7 +723,7 @@ font-weight: 500;
     display: none;
 
 }
-header{
+nav{
     position: fixed;
     top: 0;
     display: flex;
@@ -583,4 +738,9 @@ header{
     text-align: center;
 }
 
+
+}
+
+#worker:hover{
+    
 }

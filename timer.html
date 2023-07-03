@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #timing{
+            position: absolute;
+            font-size: 80px;
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <main id="main">
+        <img src="https://wallpaperaccess.com/full/754651.jpg" id="backgroundphoto" alt="" width="100%" height="100%" >
+        <p id="timing" style="font-size: 1000px;">10</p>
+    </main>
+</body>
+<script>
+    let x=document.getElementById('timing')
+    let initialX=x.innerHTML;
+    let backGroundImage=document.getElementById('backgroundphoto')
+    setInterval(
+        function(){
+            initialX=initialX > 0 ? initialX -= 1:0
+            x.innerHTML=initialX;
+            x.style.fontSize= initialX * 100 + "px"
+            document.getElementById('backgroundphoto').style.width=initialX*10+"%"
+            document.getElementById('backgroundphoto').style.height=initialX*10+"%"
+            if(initialX%2==0)
+            {
+                backGroundImage.src='https://wallpaperaccess.com/full/754651.jpg'
+            }
+            else{
+               backGroundImage.src='https://c4.wallpaperflare.com/wallpaper/691/309/188/blurred-blurry-abstract-art-horizon-wallpaper-preview.jpg'
+            }
+        },1000
+    )
+    
+</script>
+</html>
