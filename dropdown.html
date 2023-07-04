@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown</title>
+    <style>
+        .show{
+            display: block;
+            width: 300px;
+            transform: translateX(10px);
+            transition: 1s;
+        }
+        .hide{
+           transform: translateX(-500px);
+            width: 300px;
+          transition: 1s;
+           
+        }
+      
+        #bar > li{
+            background-color: brown;
+            border: 2px solid black;
+            margin-bottom: 10px;
+            list-style: none;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <button style="height: 40px; width: 60px; background-color: white;" onclick="displayBtn()"><img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2012/10/threelines.png" width="100%" height="100%" alt=""></button>
+        <div id="drop-down" class="hide">
+                <ul id="bar">
+                    <li>Home</li>
+                    <li>Sub Class</li>
+                    <li>Sign-Up</li>
+                    <li>Sign-In</li>
+                </ul>
+        </div>
+    </nav>
+</body>
+<script>
+    
+    function displayBtn(){
+        let container = document.getElementById('drop-down')
+        if(container.classList.contains("show"))
+        {
+            container.classList.remove("show")
+            container.classList.add("hide")
+        }
+        else{
+            container.classList.remove('hide')
+            container.classList.add('show')
+        }
+    }
+</script>
+</html>

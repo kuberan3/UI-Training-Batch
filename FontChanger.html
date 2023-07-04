@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontChanger</title>
+    <link rel="stylesheet" href="FontChanger.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div id="changer">
+            <button id="increase" onclick="increaseSize()">Increase +</button>
+            <button id="decrease" onclick="decreaseSize()">Decrease -</button>
+        </div>
+       <div id="texts">
+            <h1 id="paragraph">Hi Kuberan</h1>
+       </div>
+    </main>
+    <script>
+       
+        function increaseSize(){
+            let paraElement=window.getComputedStyle(paragraph).fontSize
+            let x=document.getElementById('paragraph')
+
+            let textSize = Number(paraElement.slice(0,paraElement.length-2))
+
+           console.log(typeof(textSize))
+            console.log(textSize)
+            textSize+=10
+            console.log(textSize)
+            x.style.fontSize=textSize+'px'
+            
+        }
+
+        function decreaseSize(){
+            let paraElement=window.getComputedStyle(paragraph).fontSize
+            let x=document.getElementById('paragraph')
+
+            let textSize = Number(paraElement.slice(0,paraElement.length-2))
+
+           console.log(typeof(textSize))
+            console.log(textSize)
+            textSize-=5
+            console.log(textSize)
+            x.style.fontSize=textSize+'px'
+            
+        }
+        
+        
+       
+
+     </script>
+</body>
+
+</html>

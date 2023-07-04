@@ -223,18 +223,30 @@ function caseConvertion()
 
 
 
-const person = {};
-console.log(person)
+// const person = {};
+// console.log(person)
 
-person.firstName = "John";
-person.lastName = "Doe";
-person.age = 50;
-person.eyeColor = "blue"; 
+// person.firstName = "John";
+// person.lastName = "Doe";
+// person.age = 50;
+// person.eyeColor = "blue"; 
 
-console.log(person)
+// console.log(person)
 
-person.firstName="kuberan"
+// person.firstName="kuberan"
 
-console.log(person)
+// console.log(person)
 
 
+function fontIncrement()
+{
+    let x=100
+    setInterval(function(){
+        console.log(x)
+        x=x-1
+       
+    },1000)
+
+}
+
+fontIncrement()
