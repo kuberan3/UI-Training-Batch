@@ -32,11 +32,14 @@ main {
   #todolist > li {
     height: 40px;
     width: 200px;
-    background-color: rgb(163, 193, 220);
+    /* background-color: rgb(163, 193, 220); */
     text-align: center;
     list-style: none;
   }
   #todolist > li > button{
        
-        background-image: url();
+       background-color: rgb(98, 98, 220);
+       border: none;
+       border-radius: 5px;
+       margin-left: 10px;
     }

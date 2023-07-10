@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul id="users"></ul>
+    </div>
+</body>
+
+<script>
+    var objectUser={}
+    var ullist=document.getElementById('users')
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => {
+       return objectUser= res.json()
+    })
+    .then( data =>{
+        
+        for(i in data)
+        {
+            var node = document.createElement('li')
+            node.appendChild(document.createTextNode(data[i].name)) 
+             ullist.appendChild(node) 
+        }
+    })
+</script>
+</html>

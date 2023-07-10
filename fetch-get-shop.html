@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Store</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      main > div {
+        border: 1px solid black;
+        width: 300px;
+        /* height: 300px; */
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      main > div > img {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main"></main>
+  </body>
+  <script>
+    var main = document.getElementById("main");
+
+    fetch("https://fakestoreapi.com/products/")
+      .then((res) => res.json())
+      .then((data) => {
+        for (i in data) {
+          var container = document.createElement("div");
+          container.id = "container" + i;
+
+          var pic = document.createElement("img");
+          pic.src = data[i].image;
+          container.appendChild(pic);
+
+          var text = document.createElement("p");
+          var disc = document.createTextNode(data[i].title);
+          text.appendChild(disc);
+          container.appendChild(text);
+
+          var price = document.createElement("h5");
+          price.id = "h" + i;
+          var rate = document.createTextNode(data[i].price);
+          price.appendChild(rate);
+          container.appendChild(price);
+
+          var delBtn = document.createElement("Button");
+          delBtn.textContent = "Delete";
+          container.appendChild(delBtn);
+          delBtn.id = i;
+
+          let x = "https://jsonplaceholder.typicode.com/users/" + i;
+          let y = i;
+
+          delBtn.addEventListener("click", function (event) {
+            fetch(x, { method: "DELETE" })
+              .then((Response) => {
+                console.log(Response);
+                if (Response.status == 200) {
+                  var value_ = event.target.closest("div");
+                  value_.remove();
+                }
+                console.log();
+              })
+              .then((error) => {
+                console.log(error);
+              });
+          });
+          var text = document.createElement("input");
+          text.id = "input" + i;
+          container.appendChild(text);
+
+          var editbtn = document.createElement("Button");
+          editbtn.textContent = "Edit";
+          container.appendChild(editbtn);
+          editbtn.id = "edit" + i;
+
+          editbtn.addEventListener("click", function (e) {
+            var newvalue = document.getElementById("input" + y);
+            var original = document.getElementById("h" + y);
+            original.innerText = newvalue.value;
+
+            fetch(x,{
+                method:'PUT',
+                body: JSON.stringify({
+                price:newvalue.value,
+             }),
+             headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            }
+
+          })
+          .then((response) => response.json())
+          .then((json) => console.log(json));
+
+          
+        })
+        main.appendChild(container);
+    }
+      })
+  </script>
+</html>

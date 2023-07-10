@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+     <form id="form" >
+        <input type="text" name="fname" id="fname">
+        <button type="submit">Delete</button>
+     </form>
+    </main>
+  </body>
+  <script>
+    var num = document.getElementById("fname");
+    var form=document.getElementById('form')
+    form.addEventListener('click',res =>{
+        res.preventDefault();
+        
+        var x=num.value;
+        console.log(x)
+
+        fetch(`https://jsonplaceholder.typicode.com/users/${x}`, {method: 'DELETE'})
+        .then(Response=> {})
+        .then(error =>{console.log(error)})
+        })
+  </script>
+</html>

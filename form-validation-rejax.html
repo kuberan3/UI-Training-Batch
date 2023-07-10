@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #alert-place{
+            display: none;
+        }
+        #mail-alert{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input type="text" id="input-field">
+        <p id="alert-place">Please enter a valid text</p>
+        <input type="text" id="mail">
+        <p id="mail-alert">wrong</p>
+    </main>
+</body>
+<script>
+    var text=document.getElementById('input-field')
+    var alrt=document.getElementById('alert-place')
+    text.addEventListener('input',function(){
+        var pattern=/\+91[0-9]{10}/g
+        var t=text.value
+        var result=pattern.test(t)
+        if(result){
+            alrt.style.display='block'
+            alrt.style.color= 'green'
+        }
+        else{
+            alrt.style.display='block'
+            alrt.style.color='red'
+        }
+    })
+
+
+    var mail=document.getElementById('mail')
+    var mailalert=document.getElementById('mail-alert')
+    mail.addEventListener('input',function(){
+        var x=mail.value;
+        var mailpattern=/[\w]+\@(gmail)+\.(com|in|net)/g
+        var res=mailpattern.test(x)
+        console.log(x.match(mailpattern))
+        if(res)
+        {
+            console.log(x)
+            mailalert.style.display='none'
+        }
+        else
+        {
+            mailalert.style.display='block'
+        }
+    })
+</script>
+</html>
