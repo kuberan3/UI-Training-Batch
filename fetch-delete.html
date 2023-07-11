@@ -20,11 +20,10 @@
         res.preventDefault();
         
         var x=num.value;
-        console.log(x)
+        // console.log(x)
 
-        fetch(`https://jsonplaceholder.typicode.com/users/${x}`, {method: 'DELETE'})
+        fetch(`https://jsonplaceholder.typicode.com/users/${x}` , {method: "DELETE"})
         .then(Response=> {})
-        .then(error =>{console.log(error)})
         })
   </script>
 </html>

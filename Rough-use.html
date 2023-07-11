@@ -5,206 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    /* #follow-us{
-        display: flex;
-        
-    }
-    #follow-left{
-        width: 70%;
-    }
-    #follow-right{
-        width: 30%;
-        background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/strawberry-white.png');
-    }
-    #follow-right-div button{
-        background-color: rgb(245,157,173);
-        border-radius: 2px;
-        background-color: #f69dad;
-    padding: 16px 42px;
-    border-radius: 4px;
-    cursor: pointer;
-    color: white;
-    border: 0;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-top: 16px;
-    }
-    #follow-right-div button:hover{
-        background-color: transparent;
-        color: #f69dad;
-        border: 1px solid #f69dad;
-    }
-    #follow-right-div{
-        margin-top: 115px;
-    margin-right: 115px;
-    margin-bottom: 115px;
-    margin-left: 115px;
-    }
-    #follow-right-div input{
-        width: 100%;
-        background-color: white;
-        padding: 12px;
-       color: #8b8b99;
-       box-sizing: border-box;
-    border: 0;
-    border-radius: 4px;
-    font-weight: 500;
-    } */
-    
-
-    /* #store{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgb(246,238,226);
-    }
-    #store-container{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    #store-item{
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-    }
-    #logos{
-       background-color: rgb(226,179,117);
-       margin: auto;
-       padding: 40px;
-       border-radius: 50%;
-    } */
-
-
-    #menu{
-        display: block;
-        display: none;
-        border: 0;
-        background-color: aquamarine;
-        width: 80px;
-        height: 110px;
-        position: absolute;
-        border-top: 2px solid rgb(193, 227, 141);
-        margin-top: 30px;
-    }
-    #demo:hover{
-        #menu{
-            display: block;
+        #form-div{
+            position: absolute;
+            display: no;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column;
+            background-color: aqua;
+            height: 20vh;
+            width: 20vw;
+            border: 1px solid black;
+            border-radius: 10px;
         }
-    }
-    #demo a{
-        text-decoration: none;
-        padding: 10px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        width: 80px;
-        color: black; 
-        font-weight: bold;
-        margin-right: 20px;
-        font-size: medium;
-    }
-    #demo{
-        margin: auto;
-        width: 100px;
-        display: flex;
-    
-        align-items: center;
-    }
-    .fa-caret-down {
-        margin-left: -45px;
-    
-    }
-
+        #compose-form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            align-items: center;
+            
+        }
+        #add-title{
+            margin-bottom: 10px;
+        }
+        #add-body{
+            margin-bottom: 10px;
+        }
     </style>
-    <script
-    src="https://kit.fontawesome.com/cf602690d0.js"
-    crossorigin="anonymous"
-  ></script>
 </head>
 <body>
-<!-- <div id="follow-us">
-    <div id="follow-left">
-        <img src="https://mobirise.com/extensions/organicamp/assets/images/19.jpg" alt="strawberry" width="100%">
-    </div>
-    <div id="follow-right">
-        <div id="follow-right-div">
-            <h1>Follow Us</h1>
-            <p>A wide range of products; many unusual and tasty products; courteous staff.</p>
-            <input type="text" placeholder="Your Email">
-            <button>SUBSCRIBE</button>
+    <main>
+        <button id="" onclick="formDisplay()"">compose</button>
+        <div id="form-div" style="display: none;" >
+            <form id="compose-form" action="">
+                <h4>Add new element here</h4>
+                <input type="text" id="add-title"  placeholder="title">
+                <input type="text" id="add-body" placeholder="body">
+                <button type="add-submit">Submit</button>
+            </form>
         </div>
-    </div> -->
-
-    <!-- <section id="store">
-        <p id="slanting">Fresh Food</p>
-        <h1>Our Vegan Store</h1>
-        <p>Radish contains a lot of fiber, pectin and mineral salts.</p>
-        <div id="store-container">
-          <div id="store-item">
-            <div id="logos">
-              <i
-                class="fa-solid fa-camera"
-                style="color: #ffffff; font-size: 60px"
-              ></i>
-            </div>
-            <h1>Fresh Vegetables</h1>
-            <p>Use for cooking several types of vegetable oil.</p>
-          </div>
-          <div id="store-item">
-            <div id="logos">
-              <i
-                class="fa-solid fa-rocket"
-                style="color: #ffffff; font-size: 60px"
-              ></i>
-            </div>
-            <h1>High Quality</h1>
-            <p>This is the best source of essential fatty acids for the body</p>
-          </div>
-          <div id="store-item">
-            <div id="logos" style="width: 60px">
-              <i
-                class="fa-brands fa-twitter"
-                style="color: #ffffff; font-size: 60px"
-              ></i>
-            </div>
-            <h1>Sale</h1>
-            <p>
-              It is very good, if in the kitchen there will always be several
-              bottles with different oils.
-            </p>
-          </div>
-          <div id="store-item">
-            <div id="logos">
-              <i
-                class="fa-solid fa-comments"
-                style="color: #ffffff; font-size: 60px"
-              ></i>
-            </div>
-            <h1>Best Price</h1>
-            <p>
-              Remember that unrefined oils are not suitable for heat treatment.
-            </p>
-          </div>
-        </div>
-      </section> -->
-<header>
-    <div id="demo">
-        <a href="">demo</a>
-        <p> <i class="fa-solid fa-caret-down" style="color: #01060e"></i></p>
-        <div id="menu">
-            <a href="">menu1</a><br>
-            <hr width="70%">
-            <a href="" >mwnu2</a><br>
-            <hr width="70%">
-            <a href="">menu3</a><br>
-            <hr width="70%">
-        </div>
-    </div>
-</header>
-
-
+    </main>
 </body>
+<script>
+    function formDisplay(){
+        document.getElementById('form-div').style.display="block"
+    }
+</script>
 </html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script
+      src="https://kit.fontawesome.com/cf602690d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      header {
+        height: 50px;
+        width: 100vw;
+        background-color:  rgb(245,248,252);
+        display: flex;
+      }
+      #search-box {
+        width: 40%;
+        background-color: rgb(233,241,251);
+        border-radius: 50px;
+        
+      }
+      #search {
+        width: 70%;
+        border: none;
+        background-color: rgb(233,241,251);
+        font-size: large;
+      }
+      #lense {
+        
+        border: none;
+        border-radius: 90px;
+        height: 50px;
+        font-size: large;
+        background-color: rgb(233,241,251);
+      }
+      #sort {
+        background-color: rgb(233,241,251);
+        border-radius: 50px;
+        border: none;
+        float: right;
+        height: 50px;
+        width: 50px;
+      }
+      #container {
+        display: flex;
+        width: 100vw;
+        height: 95vh;
+      }
+      #left {
+        background-color:  rgb(245,248,252);
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+      }
+      #right {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+      }
+      #form-div{
+            position: absolute;
+            display: no;
+            right: 10px;
+            bottom: 10%;
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column;
+            background-color: rgb(149, 238, 238);
+            height: 20vh;
+            width: 20vw;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #compose-form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            align-items: center;
+            
+        }
+        #add-title{
+            margin-bottom: 10px;
+        }
+        #add-body{
+            margin-bottom: 10px;
+        }
+      #top {
+        display: flex;
+        width: 100%;
+        align-items: center;
+     
+      }
+      #main {
+        width: 100%;
+        height: 100%;
+      }
+      td {
+        /* display: flex;
+            flex-direction: column; */
+      }
+      td > input {
+        display: none;
+      }
+      #p-table {
+        display: none;
+      }
+      #u-table {
+        display: none;
+      }
+      #t-table {
+        display: none;
+      }
+      #gmail-image{
+        margin-right: 190px;
+      }
+      #sort-image{
+        background-color: rgb(233,241,251);
+        border-radius: 30px;
+      }
+      .arrow {
+        margin-left: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#right-header{
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+#experience{
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 90px;
+}
+#setting{
+    background-color: rgb(245,248,252);
+    border: none;
+    
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+}
+#dots{
+    background-color: rgb(245,248,252);
+    border: none;
+    /* font-size: 30px; */
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+#question{
+    background-color: white;
+    border: solid black 1.5px ;
+    border-radius: 50px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+}
+#compose{
+    /* border: 1px solid green; */
+    padding-top: 15px;
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 50px;
+    width: 70%;
+    line-height: 70px;
+    margin-left: 20px;
+    background-color: #C2E7FE;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    >input{
+        border: none;
+        background-color: #C2E7FE;
+        width: 60%;
+        margin-top: -14px;
+        color: black;
+        margin-left: 10px;
+        outline: none;
+    }
+}
+.label-div{
+    width: 120%;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    >a{
+        text-decoration: none;
+        color: grey;
+        margin-left: 20px;
+        line-height: 5px;
+    }
+}
+#postButton{
+    width: 30%;
+    height: 60px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+#userButton{
+    width: 30%;
+    height: 60px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+#todoButton{
+    height: 60px;
+    width: 20%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+#compose
+{
+    display: flex;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="gmail-image"
+        src="https://logos-world.net/wp-content/uploads/2020/11/Gmail-Emblem.png"
+        alt="gmail"
+        height="60px"
+        width="100"
+        
+      />
+
+      <div id="search-box">
+        <span
+          ><button id="lense">
+            <i
+              class="fa-sharp fa-solid fa-magnifying-glass"
+              style="color: #00040d"
+            ></i></button
+        ></span>
+        <span
+          ><input type="text" id="search" placeholder="Search in mail"
+        /></span>
+        <span
+          ><button id="sort">
+            <img id="sort-image"
+              src="https://static.thenounproject.com/png/4775351-200.png"
+              alt=""
+              width="50px"
+              height="50px"
+
+            /></button
+        ></span>
+      </div>
+      <div id="right-header">
+        <div style="display: flex;background-color: rgb(233,241,251); border-radius: 30px; margin-left: 30px;">
+          <p style="padding-left: 10px">&#128994;</p>
+          <p>Active  </p>
+          <p  style="padding-right:10px"> <i class="arrow"></i></p>
+        </div>
+        
+         <button id="question">
+            <i class="fa-regular fa-question" style="color: #020812;"></i>
+        </button>
+        <button id="setting" >
+            <img src="https://logodix.com/logo/803724.png"  width="40px" height="40px" alt="setting"> 
+        </button>
+        <button id="dots">
+            <img src="https://cdn-icons-png.flaticon.com/512/17/17704.png"  width="30px" height="30px" alt="dots">
+        </button>
+        <button id="experience">
+            <img src="https://www.amerisave.com/wp-content/themes/enfold/common/rounded-home-1/images/Experience-com-logo-fullcolor-small.png" alt="experience logo" height="40px">
+        </button>
+      </div>
+    </header>
+    <section id="container">
+      <div id="left">
+        <div id="compose">
+            <span class="material-symbols-rounded">
+                edit
+                </span>
+            <!-- <input type="text" placeholder="Compose"> -->
+            <button style="background-color: rgb(193,231,254); border: none;" onclick="formDisplay()">Compose</button>
+        </div>
+        <div id="titles">
+            <div class="label-div">
+                <span class="material-symbols-rounded">inbox</span>
+                <a href="">Inbox</a>
+            </div>
+            <div class="label-div">
+                <span class="material-symbols-sharp">star</span>
+                <a href="">Starred</a>
+            </div>
+            <div class="label-div">
+                <span class="material-symbols-sharp">schedule</span>
+                <a href="">Snoozed</a>
+            </div>
+            <div class="label-div">
+                <span class="material-symbols-sharp">send</span>
+                <a href="">Sent</a>
+            </div>
+            <div class="label-div">
+                <span class="material-symbols-sharp">draft</span>
+                <a href="">Draft</a>
+            </div>
+            <div class="label-div">
+                <span class="material-symbols-sharp">expand_more</span>
+                <a href="">More</a>
+            </div>
+        </div>
+      </div>
+      <div id="right">
+        <div id="top">
+          <button id="postButton">POST</button>
+          <button id="todoButton">TODOS</button>
+          <button id="userButton">USERS</button>
+        </div>
+        <div id="main">
+          <table id="u-table">
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>BODY</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </table>
+          <table id="t-table">
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>BODY</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </table>
+          <table id="p-table">
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>BODY</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+    <div id="form-div" style="display: none;" >
+        <form id="compose-form" >
+            <h4>Add new element here</h4>
+            <input type="text" id="add-title"  placeholder="title">
+            <input type="text" id="add-body" placeholder="body">
+            <button id="add-submit-button">Submit</button>
+        </form>
+    </div>
+  </body>
+  <script>
+    //post
+    var p_table = document.getElementById("p-table");
+
+    var postBtn = document.getElementById("postButton");
+
+    postBtn.addEventListener("click", function () {
+      document.getElementById("p-table").style.display = "block";
+      document.getElementById("u-table").style.display = "none";
+      document.getElementById("t-table").style.display = "none";
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((res) => res.json())
+        .then((data) => {
+          var hid = document.createElement("th");
+          var hnode = document.createTextNode("ID");
+
+          for (i in data) {
+            let x = "https://jsonplaceholder.typicode.com/posts/" + i;
+            let y = i;
+            var trow = document.createElement("tr");
+
+            var tid = document.createElement("td");
+            tid.id = "tid" + i;
+            var node = document.createTextNode(data[i].id);
+            tid.appendChild(node);
+          
+
+            trow.appendChild(tid);
+
+            var tTitle = document.createElement("td");
+            tTitle.id = "tTitle" + i;
+            var node = document.createTextNode(data[i].title);
+            tTitle.appendChild(node);
+            var input_Title = document.createElement("input");
+            input_Title.id = "Title" + i;
+            tTitle.appendChild(input_Title);
+
+            trow.appendChild(tTitle);
+
+            var tBody = document.createElement("td");
+            tBody.id = "tBody" + i;
+            var node = document.createTextNode(data[i].body);
+            tBody.appendChild(node);
+            var input_Body = document.createElement("input");
+            input_Body.id = "Body" + i;
+            tBody.appendChild(input_Body);
+
+            trow.appendChild(tBody);
+
+            //edit button
+
+            var tBody = document.createElement("td");
+
+            var updateBtn = document.createElement("button");
+            updateBtn.textContent = "Update";
+            tBody.appendChild(updateBtn);
+            updateBtn.addEventListener("click", function () {
+            //   document.getElementById("id" + y).style.display = "block";
+              document.getElementById("Title" + y).style.display = "block";
+              document.getElementById("Body" + y).style.display = "block";
+              document.getElementById("edit" + y).style.display = "block";
+            });
+
+            var editbtn = document.createElement("Button");
+            editbtn.textContent = "Edit";
+            tBody.appendChild(editbtn);
+            trow.appendChild(tBody);
+            editbtn.id = "edit" + i;
+
+            editbtn.style.display = "none";
+
+            editbtn.addEventListener("click", function (e) {
+            //   var new_id = document.getElementById("id" + y);
+              var new_title = document.getElementById("Title" + y);
+              var new_body = document.getElementById("Body" + y);
+
+              var old_title = document.getElementById("tTitle" + y);
+              var old_body = document.getElementById("tBody" + y);
+
+              old_title.innerHTML = new_title.value;
+              old_body.innerHTML = new_body.value;
+
+              const dataToUpdate = {
+                
+                title: new_title.value,
+                body: new_body.value,
+              };
+
+              const jsonString = JSON.stringify(dataToUpdate);
+              
+              fetch(x, {
+                method: "PUT",
+                body: jsonString,
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                },
+              })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+            });
+
+            //delete button
+
+            var tBody = document.createElement("td");
+            var delBtn = document.createElement("Button");
+            delBtn.textContent = "Delete";
+            tBody.appendChild(delBtn);
+            trow.appendChild(tBody);
+
+            delBtn.id = "del" + i;
+
+            delBtn.addEventListener("click", function (event) {
+              fetch(x, { method: "DELETE" })
+                .then((Response) => {
+                  console.log(Response);
+                  if (Response.status == 200) {
+                    var value_ = event.target.closest("tr");
+                    value_.remove();
+                  }
+                  console.log();
+                })
+                .then((error) => {
+                  console.log(error);
+                });
+            });
+
+            p_table.appendChild(trow);
+          }
+        });
+    });
+
+    //Todos
+
+    var t_table = document.getElementById("t-table");
+
+    var todoBtn = document.getElementById("todoButton");
+
+    todoBtn.addEventListener("click", function () {
+      document.getElementById("t-table").style.display = "block";
+      document.getElementById("u-table").style.display = "none";
+      document.getElementById("p-table").style.display = "none";
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((res) => res.json())
+        .then((data) => {
+          var hid = document.createElement("th");
+          var hnode = document.createTextNode("ID");
+
+          for (i in data) {
+            let x = "https://jsonplaceholder.typicode.com/todos/" + i;
+            let y = i;
+            var trow = document.createElement("tr");
+
+            var tid = document.createElement("td");
+            tid.id = "tid" + i;
+            var node = document.createTextNode(data[i].id);
+            tid.appendChild(node);
+            // var input_id = document.createElement("input");
+            // tid.appendChild(input_id);
+            // input_id.id = "id" + i;
+
+            trow.appendChild(tid);
+
+            var tTitle = document.createElement("td");
+            tTitle.id = "tTitle" + i;
+            var node = document.createTextNode(data[i].title);
+            tTitle.appendChild(node);
+            var input_Title = document.createElement("input");
+            input_Title.id = "Title" + i;
+            tTitle.appendChild(input_Title);
+
+            trow.appendChild(tTitle);
+
+            var tBody = document.createElement("td");
+            tBody.id = "tBody" + i;
+            var node = document.createTextNode(data[i].body);
+            tBody.appendChild(node);
+            var input_Body = document.createElement("input");
+            input_Body.id = "Body" + i;
+            tBody.appendChild(input_Body);
+
+            trow.appendChild(tBody);
+
+            //edit button
+
+            var tBody = document.createElement("td");
+
+            var updateBtn = document.createElement("button");
+            updateBtn.textContent = "Update";
+            tBody.appendChild(updateBtn);
+            updateBtn.addEventListener("click", function () {
+            //   document.getElementById("id" + y).style.display = "block";
+              document.getElementById("Title" + y).style.display = "block";
+              document.getElementById("Body" + y).style.display = "block";
+              document.getElementById("edit" + y).style.display = "block";
+            });
+
+            var editbtn = document.createElement("Button");
+            editbtn.textContent = "Edit";
+            tBody.appendChild(editbtn);
+            trow.appendChild(tBody);
+            editbtn.id = "edit" + i;
+
+            editbtn.style.display = "none";
+
+            editbtn.addEventListener("click", function (e) {
+            //   var new_id = document.getElementById("id" + y);
+              var new_title = document.getElementById("Title" + y);
+              var new_body = document.getElementById("Body" + y);
+
+            //   var old_id = document.getElementById("tid" + y);
+              var old_title = document.getElementById("tTitle" + y);
+              var old_body = document.getElementById("tBody" + y);
+
+            //   old_id.innerHTML = new_id.value;
+              old_title.innerHTML = new_title.value;
+              old_body.innerHTML = new_body.value;
+                
+              const dataToUpdate = {
+                title: new_title.value,
+                body: new_body.value,
+              };
+
+              const jsonString = JSON.stringify(dataToUpdate);
+              
+              fetch(x, {
+                method: "PUT",
+                body: jsonString,
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                },
+              })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+            });
+
+            
+
+            //delete button
+
+            var tBody = document.createElement("td");
+            var delBtn = document.createElement("Button");
+            delBtn.textContent = "Delete";
+            tBody.appendChild(delBtn);
+            trow.appendChild(tBody);
+
+            delBtn.id = "del" + i;
+
+            delBtn.addEventListener("click", function (event) {
+              fetch(x, { method: "DELETE" })
+                .then((Response) => {
+                  console.log(Response);
+                  if (Response.status == 200) {
+                    var value_ = event.target.closest("tr");
+                    value_.remove();
+                  }
+                  console.log();
+                })
+                .then((error) => {
+                  console.log(error);
+                });
+            });
+
+            t_table.appendChild(trow);
+          }
+        });
+    });
+
+    //users
+
+    var u_table = document.getElementById("u-table");
+
+    var userBtn = document.getElementById("userButton");
+
+    userBtn.addEventListener("click", function () {
+      document.getElementById("u-table").style.display = "block";
+      document.getElementById("p-table").style.display = "none";
+      document.getElementById("t-table").style.display = "none";
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((res) => res.json())
+        .then((data) => {
+          var hid = document.createElement("th");
+          var hnode = document.createTextNode("ID");
+
+          for (i in data) {
+            let x = "https://jsonplaceholder.typicode.com/users/" + i;
+            let y = i;
+            var trow = document.createElement("tr");
+
+            var tid = document.createElement("td");
+            tid.id = "tid" + i;
+            var node = document.createTextNode(data[i].id);
+            tid.appendChild(node);
+            // var input_id = document.createElement("input");
+            // tid.appendChild(input_id);
+            // input_id.id = "id" + i;
+
+            trow.appendChild(tid);
+
+            var tTitle = document.createElement("td");
+            tTitle.id = "tTitle" + i;
+            var node = document.createTextNode(data[i].title);
+            tTitle.appendChild(node);
+            var input_Title = document.createElement("input");
+            input_Title.id = "Title" + i;
+            tTitle.appendChild(input_Title);
+
+            trow.appendChild(tTitle);
+
+            var tBody = document.createElement("td");
+            tBody.id = "tBody" + i;
+            var node = document.createTextNode(data[i].body);
+            tBody.appendChild(node);
+            var input_Body = document.createElement("input");
+            input_Body.id = "Body" + i;
+            tBody.appendChild(input_Body);
+
+            trow.appendChild(tBody);
+
+            //edit button
+
+            var tBody = document.createElement("td");
+
+            var updateBtn = document.createElement("button");
+            updateBtn.textContent = "Update";
+            tBody.appendChild(updateBtn);
+            updateBtn.addEventListener("click", function () {
+            //   document.getElementById("id" + y).style.display = "block";
+              document.getElementById("Title" + y).style.display = "block";
+              document.getElementById("Body" + y).style.display = "block";
+              document.getElementById("edit" + y).style.display = "block";
+            });
+
+            var editbtn = document.createElement("Button");
+            editbtn.textContent = "Edit";
+            tBody.appendChild(editbtn);
+            trow.appendChild(tBody);
+            editbtn.id = "edit" + i;
+
+            editbtn.style.display = "none";
+
+            // editbtn.addEventListener("click", function (e) {
+            //   var new_id = document.getElementById("id" + y);
+            //   var new_title = document.getElementById("Title" + y);
+            //   var new_body = document.getElementById("Body" + y);
+
+            //   var old_id = document.getElementById("tid" + y);
+            //   var old_title = document.getElementById("tTitle" + y);
+            //   var old_body = document.getElementById("tBody" + y);
+
+            //   old_id.innerHTML = new_id.value;
+            //   old_title.innerHTML = new_title.value;
+            //   old_body.innerHTML = new_body.value;
+
+            //   fetch(x, {
+            //     method: "PUT",
+            //     body: JSON.stringify({
+            //       // userId:3,
+            //       id: new_id.value,
+            //       title: new_title.value,
+            //       body: new_body.value,
+            //     }),
+            //     headers: {
+            //       "Content-type": "application/json; charset=UTF-8",
+            //     },
+            //   })
+            //     .then((response) => response.json())
+            //     .then((json) => console.log(json));
+            // });
+
+            editbtn.addEventListener("click", function (e) {
+            //   var new_id = document.getElementById("id" + y);
+              var new_title = document.getElementById("Title" + y);
+              var new_body = document.getElementById("Body" + y);
+              
+              var old_title = document.getElementById("tTitle" + y);
+              var old_body = document.getElementById("tBody" + y);
+
+              old_title.innerHTML = new_title.value;
+              old_body.innerHTML = new_body.value;
+
+              const dataToUpdate = {
+                
+                title: new_title.value,
+                body: new_body.value,
+              };
+
+              const jsonString = JSON.stringify(dataToUpdate);
+              
+              fetch(x, {
+                method: "PUT",
+                body: jsonString,
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                },
+              })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+            });
+
+
+            //delete button
+
+            var tBody = document.createElement("td");
+            var delBtn = document.createElement("Button");
+            delBtn.textContent = "Delete";
+            tBody.appendChild(delBtn);
+            trow.appendChild(tBody);
+
+            delBtn.id = "del" + i;
+
+            delBtn.addEventListener("click", function (event) {
+              fetch(x, { method: "DELETE" })
+                .then((Response) => {
+                  console.log(Response);
+                  if (Response.status == 200) {
+                    var value_ = event.target.closest("tr");
+                    value_.remove();
+                  }
+                  console.log();
+                })
+                .then((error) => {
+                  console.log(error);
+                });
+            });
+
+            u_table.appendChild(trow);
+          }
+        });
+    });
+
+    function formDisplay(){
+        document.getElementById('form-div').style.display="block"
+    }
+    
+        var new_add_submit=document.getElementById("add-submit-button")
+        var new_add_title=document.getElementById("add-title")
+        var new_add_body=document.getElementById("add-body")
+        new_add_submit.addEventListener("click",function(e){
+            e.preventDefault()
+            
+            const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+
+
+            const newData = {
+            title:new_add_title.value,
+            body:new_add_body=document,
+            };
+
+
+            fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("New data added:", data);
+            })
+            .catch(error => {
+                console.error("Error adding new data:", error);
+            });
+
+        })
+     
+        // var newtd=document.createElement("td")
+        // var node=createTextNode()
+    
+  </script>
+</html>
