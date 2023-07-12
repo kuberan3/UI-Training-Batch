@@ -62,25 +62,37 @@
         display: flex;
         flex-direction: column;
       }
+
       #right {
         width: 80%;
         display: flex;
         flex-direction: column;
       }
       #form-div{
-            position: absolute;
+            position: fixed;
             display: no;
             right: 10px;
             bottom: 10%;
             display: flex;
             /* align-items: center; */
             flex-direction: column;
-            background-color: rgb(149, 238, 238);
+            background-color: rgb(193,231,254);
             height: 20vh;
             width: 20vw;
             border: 1px solid black;
             border-radius: 10px;
         }
+        #compose-form > button{
+          height: 30px;
+          background-color: rgb(227, 103, 103);
+          border-radius: 5px;
+        }
+         #compose-form > input{
+          
+          
+          border-radius: 5px;
+        }
+
         #compose-form{
             display: flex;
             flex-direction: column;
@@ -104,12 +116,14 @@
         width: 100%;
         height: 100%;
       }
-      td {
-        /* display: flex;
-            flex-direction: column; */
-      }
+    
       td > input {
         display: none;
+      }
+      td > button{
+        background-color: rgb(193,231,254);
+        border-radius: 5px;
+        height: 30px;
       }
       #p-table {
         display: none;
@@ -120,6 +134,9 @@
       #t-table {
         display: none;
       }
+      /* tr:nth-child(even) {
+       background-color: #b4dce7;
+      } */
       #gmail-image{
         margin-right: 190px;
       }
@@ -236,6 +253,9 @@
 {
     display: flex;
 }
+th{
+  background-color: #cdd0da;
+}
 
     </style>
   </head>
@@ -299,7 +319,7 @@
                 edit
                 </span>
             <!-- <input type="text" placeholder="Compose"> -->
-            <button style="background-color: rgb(193,231,254); border: none;" onclick="formDisplay()">Compose</button>
+            <button style="background-color: rgb(193,231,254); border: none; margin-top: -15px; padding-left: 10px; cursor: pointer;" onclick="formDisplay()">Compose</button>
         </div>
         <div id="titles">
             <div class="label-div">
@@ -338,8 +358,8 @@
           <table id="u-table">
             <tr>
               <th>ID</th>
-              <th>TITLE</th>
-              <th>BODY</th>
+              <th>NAME</th>
+              <th>COMPANY-NAME</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -348,7 +368,7 @@
             <tr>
               <th>ID</th>
               <th>TITLE</th>
-              <th>BODY</th>
+              <th>COMPLETED</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -372,7 +392,7 @@
             <input type="text" id="add-body" placeholder="body">
             <button id="add-submit-button">Submit</button>
         </form>
-    </div>
+    </div> 
   </body>
   <script>
     //post
@@ -408,6 +428,7 @@
             var node = document.createTextNode(data[i].title);
             tTitle.appendChild(node);
             var input_Title = document.createElement("input");
+            input_Title.setAttribute("value", data[i].title);
             input_Title.id = "Title" + i;
             tTitle.appendChild(input_Title);
 
@@ -418,6 +439,7 @@
             var node = document.createTextNode(data[i].body);
             tBody.appendChild(node);
             var input_Body = document.createElement("input");
+            input_Body.setAttribute("value", data[i].body);
             input_Body.id = "Body" + i;
             tBody.appendChild(input_Body);
 
@@ -541,6 +563,7 @@
             var node = document.createTextNode(data[i].title);
             tTitle.appendChild(node);
             var input_Title = document.createElement("input");
+            input_Title.setAttribute("value", data[i].title);
             input_Title.id = "Title" + i;
             tTitle.appendChild(input_Title);
 
@@ -548,9 +571,10 @@
 
             var tBody = document.createElement("td");
             tBody.id = "tBody" + i;
-            var node = document.createTextNode(data[i].body);
+            var node = document.createTextNode(data[i].completed);
             tBody.appendChild(node);
             var input_Body = document.createElement("input");
+            input_Body.setAttribute("value", data[i].completed);
             input_Body.id = "Body" + i;
             tBody.appendChild(input_Body);
 
@@ -593,7 +617,7 @@
                 
               const dataToUpdate = {
                 title: new_title.value,
-                body: new_body.value,
+                completed: new_body.value,
               };
 
               const jsonString = JSON.stringify(dataToUpdate);
@@ -674,19 +698,21 @@
 
             var tTitle = document.createElement("td");
             tTitle.id = "tTitle" + i;
-            var node = document.createTextNode(data[i].title);
+            var node = document.createTextNode(data[i].name);
             tTitle.appendChild(node);
             var input_Title = document.createElement("input");
             input_Title.id = "Title" + i;
+            input_Title.setAttribute("value", data[i].name);
             tTitle.appendChild(input_Title);
 
             trow.appendChild(tTitle);
 
             var tBody = document.createElement("td");
             tBody.id = "tBody" + i;
-            var node = document.createTextNode(data[i].body);
+            var node = document.createTextNode(data[i].company.name);
             tBody.appendChild(node);
             var input_Body = document.createElement("input");
+            input_Body.setAttribute("value", data[i].company.name);
             input_Body.id = "Body" + i;
             tBody.appendChild(input_Body);
 
@@ -714,34 +740,6 @@
 
             editbtn.style.display = "none";
 
-            // editbtn.addEventListener("click", function (e) {
-            //   var new_id = document.getElementById("id" + y);
-            //   var new_title = document.getElementById("Title" + y);
-            //   var new_body = document.getElementById("Body" + y);
-
-            //   var old_id = document.getElementById("tid" + y);
-            //   var old_title = document.getElementById("tTitle" + y);
-            //   var old_body = document.getElementById("tBody" + y);
-
-            //   old_id.innerHTML = new_id.value;
-            //   old_title.innerHTML = new_title.value;
-            //   old_body.innerHTML = new_body.value;
-
-            //   fetch(x, {
-            //     method: "PUT",
-            //     body: JSON.stringify({
-            //       // userId:3,
-            //       id: new_id.value,
-            //       title: new_title.value,
-            //       body: new_body.value,
-            //     }),
-            //     headers: {
-            //       "Content-type": "application/json; charset=UTF-8",
-            //     },
-            //   })
-            //     .then((response) => response.json())
-            //     .then((json) => console.log(json));
-            // });
 
             editbtn.addEventListener("click", function (e) {
             //   var new_id = document.getElementById("id" + y);
@@ -751,13 +749,15 @@
               var old_title = document.getElementById("tTitle" + y);
               var old_body = document.getElementById("tBody" + y);
 
+              console.log('new',new_title.value)
+
               old_title.innerHTML = new_title.value;
               old_body.innerHTML = new_body.value;
 
               const dataToUpdate = {
                 
-                title: new_title.value,
-                body: new_body.value,
+                name: new_title.value,
+                company:{name:new_body.value} ,
               };
 
               const jsonString = JSON.stringify(dataToUpdate);
@@ -819,7 +819,7 @@
 
             const newData = {
             title:new_add_title.value,
-            body:new_add_body=document,
+            body:new_add_body.value,
             };
 
 
