@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div><label for="pets">Which pet is Yours:</label>
+            <select name="pet" id="pets" onchange="petrender()">
+              <!-- <option value="dog">dog</option>
+              <option value="chicken">chicken</option>
+              <option value="cat">cat</option>
+              <option value="dog">dog</option>
+              <option value="chicken">chicken</option>
+              <option value="rabbit">rabbit</option> -->
+            </select>
+        </div>
+        <img alt="Choose Your Pet" id="petimage">
+        <div>
+
+        </div>
+    </main>
+</body>
+<script>
+     var petObj=[
+       { 
+             name:'cat',
+             image:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+        },
+        {
+            name:'dog',
+            image:"https://www.k9active.co.uk/product_images/uploaded_images/introducing-puppy.jpg"
+        },
+        {
+            name:'rabbit',
+            image:"https://www.petnsur.co.nz/content/blog/0430948001603931257.jpg?width=1040&height=500&fit=bounds"
+        },
+        {
+            name:'chicken',
+            image:"https://tiimg.tistatic.com/fp/1/007/501/disease-free-healthy-red-and-orange-poultry-farm-live-rooster-bread-male-chicken-382.jpg"
+        }]
+    var pets = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit']
+
+    var pet=document.getElementById("pets")
+    for(i=0;i<pets.length;i++)
+    {
+        option=document.createElement("option")
+        option.value = pets[i];
+        option.text = pets[i];
+        pet.appendChild(option)
+    }
+    
+    function petrender(){
+        var image=document.getElementById("petimage")
+       
+        for(i=0;i<petObj.length;i++)
+        {   
+            if(pet.value==petObj[i].name)
+            {
+                image.src = petObj[i].image;
+                console.log(pet.value)
+
+            }
+        }
+    }
+    
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <button id="1" >sample1</button>
+        <br>sample
+        <button id="two" style="display: none;">sample2</button>
+    </div>
+</body>
+<script>
+    var btn1=document.getElementById("1")
+    var btn2=document.getElementById("two")
+    btn1.addEventListener("click",display=>{
+       btn1.style.display="none"
+       btn2.style.display="block"
+    })
+    btn2.addEventListener("click",display=>{
+            btn2.style.display="none"
+            btn1.style.display="block"
+    })
+</script>
+</html>
