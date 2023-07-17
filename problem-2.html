@@ -9,12 +9,7 @@
     <main>
         <div><label for="pets">Which pet is Yours:</label>
             <select name="pet" id="pets" onchange="petrender()">
-              <!-- <option value="dog">dog</option>
-              <option value="chicken">chicken</option>
-              <option value="cat">cat</option>
-              <option value="dog">dog</option>
-              <option value="chicken">chicken</option>
-              <option value="rabbit">rabbit</option> -->
+            
             </select>
         </div>
         <img alt="Choose Your Pet" id="petimage">
@@ -60,8 +55,6 @@
             if(pet.value==petObj[i].name)
             {
                 image.src = petObj[i].image;
-                console.log(pet.value)
-
             }
         }
     }

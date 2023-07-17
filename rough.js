@@ -1,178 +1,225 @@
-// // var name1 = "kuberan";
-// // var name2 = "venkatesh";
-// // var area = "villupuram";
-// // var data = `firstname=${name1} lastname=${name2} location=${area}`;
-// // // console.log(data)
+// // // // var name1 = "kuberan";
+// // // // var name2 = "venkatesh";
+// // // // var area = "villupuram";
+// // // // var data = `firstname=${name1} lastname=${name2} location=${area}`;
+// // // // // console.log(data)
 
-// // add = (x, y) => {
-// //   return x + y;
-// // };
-// // // console.log(add(2,3))
+// // // // add = (x, y) => {
+// // // //   return x + y;
+// // // // };
+// // // // // console.log(add(2,3))
 
-// // sub = (x, y) => {
-// //   return x - y;
-// // };
-// // // console.log(sub(5,3))
+// // // // sub = (x, y) => {
+// // // //   return x - y;
+// // // // };
+// // // // // console.log(sub(5,3))
 
-// // addition = (call, ...a) => {
-// //   console.log("call", call, "value", a);
-// //   sum = 0;
-// //   for (i = 0; i < a.length; i++) {
-// //     sum = a[i];
-// //   }
+// // // // addition = (call, ...a) => {
+// // // //   console.log("call", call, "value", a);
+// // // //   sum = 0;
+// // // //   for (i = 0; i < a.length; i++) {
+// // // //     sum = a[i];
+// // // //   }
 
-// //   call(sum);
-// // };
-// // print = (result) => {
-// //   console.log(result);
-// // };
-// // // let arr1=[1,2,3]
-// // addition(print, 1, 2, 3);
+// // // //   call(sum);
+// // // // };
+// // // // print = (result) => {
+// // // //   console.log(result);
+// // // // };
+// // // // // let arr1=[1,2,3]
+// // // // addition(print, 1, 2, 3);
 
-// // // console.log('test--',addition(2,3,1,5))
+// // // // // console.log('test--',addition(2,3,1,5))
 
-// // let arr2 = [4, 5, 6];
-// // // arr1[3]=2
-// // // let arr3 = [...arr1, ...arr2];
-// // // let arr3=arr1.concat(arr2)
+// // // // let arr2 = [4, 5, 6];
+// // // // // arr1[3]=2
+// // // // // let arr3 = [...arr1, ...arr2];
+// // // // // let arr3=arr1.concat(arr2)
 
-// // // console.log(arr3)
-// // // var sum = 0;
-// // // for (i = 0; i < arr3.length; i++) {
-// // //   sum += arr3[i];
+// // // // // console.log(arr3)
+// // // // // var sum = 0;
+// // // // // for (i = 0; i < arr3.length; i++) {
+// // // // //   sum += arr3[i];
+// // // // // }
+// // // // // console.log(sum)
+
+// // // // var names = ["alpha", "beta", "gamma", "delta"];
+
+// // // // var x,y,z,c
+// // // // [x,y,z,c]=names
+
+// // // // console.log(x,y,z,c)
+// // // // var [firstName, secondName] = ["alpha", "beta", "gamma", "delta"];
+
+// // // // console.log(firstName);//"alpha"
+// // // // console.log(secondName);//"beta"
+
+// // // // //After swapping
+// // // // [firstName, secondName] = [secondName, firstName]
+
+// // // // console.log(firstName);//"beta"
+// // // // console.log(secondName);//"alpha"
+
+// // // // var a=[1,2,3,4]
+// // // // sqr =(n)=>{
+// // // //   return n*n
+// // // // }
+// // // // var b=a.map(sqr)
+// // // // console.log(b)
+
+// // // // array map
+
+// // // arr1=[1,2,3,4,5]
+// // // doublevalue = (num) => {
+// // //   return num*2
 // // // }
-// // // console.log(sum)
+// // // var arr2=arr1.map(doublevalue)
 
-// // var names = ["alpha", "beta", "gamma", "delta"];
+// // // // console.log(arr2)
 
-// // var x,y,z,c
-// // [x,y,z,c]=names
+// // // StringConversion=(num)=>{
+// // //   return String(num)
+// // // }
+// // // var arr3=arr1.map(StringConversion)
+// // // // console.log(arr3)
 
-// // console.log(x,y,z,c)
-// // var [firstName, secondName] = ["alpha", "beta", "gamma", "delta"];
+// // // var names=["john", "JACOB", "jinGleHeimer", "schmidt"]
 
-// // console.log(firstName);//"alpha"
-// // console.log(secondName);//"beta"
+// // // capital=(num)=>{
+// // //   return num.toUpperCase()
 
-// // //After swapping
-// // [firstName, secondName] = [secondName, firstName]
+// // // }
+// // // var arr=names.map(capital)
+// // // // console.log(arr)
 
-// // console.log(firstName);//"beta"
-// // console.log(secondName);//"alpha"
+// // // var employee=[
+// // //   {
+// // //       name: "Angelina Jolie",
+// // //       age: 80
+// // //   },
+// // //   {
+// // //       name: "Eric Jones",
+// // //       age: 2
+// // //   },
+// // //   {
+// // //       name: "Paris Hilton",
+// // //       age: 5
+// // //   },
+// // //   {
+// // //       name: "Kayne West",
+// // //       age: 16
+// // //   },
+// // //   {
+// // //       name: "Bob Ziroll",
+// // //       age: 100
+// // //   }
+// // // ]
 
-// // var a=[1,2,3,4]
-// // sqr =(n)=>{
-// //   return n*n
-// // }
-// // var b=a.map(sqr)
-// // console.log(b)
+// // // namesOnly=(obj)=>{
+// // //   return obj.name
+// // // }
 
-// // array map
+// // // var nums=employee.map(namesOnly)
 
-// arr1=[1,2,3,4,5]
-// doublevalue = (num) => {
-//   return num*2
-// }
-// var arr2=arr1.map(doublevalue)
+// // // // console.log(nums)
 
-// // console.log(arr2)
+// // const students = [
+// //   { name: "Alice", scores: [90, 85, 92] },
+// //   { name: "Bob", scores: [75, 80, 85] },
+// //   { name: "Charlie", scores: [90, 95, 85] },
+// //   { name: "David", scores: [100, 100, 100] },
+// // ]; // Use map to calculate the average test score for each student
+// // // Use filter to only select students with an average above 90
 
-// StringConversion=(num)=>{
-//   return String(num)
-// }
-// var arr3=arr1.map(StringConversion)
-// // console.log(arr3)
+// // // findScore=(a)=>{
+// // //     var total=0
+// // //       for(i=0;i<a.length;i++)
+// // //       {
+// // //         total=total+a[i]
+// // //       }
+// // //       return total/a.length
+// // // }
 
-// var names=["john", "JACOB", "jinGleHeimer", "schmidt"]
+// // // findScore = (a) => {
+// // //   var newStudent = {};
+// // //   newStudent.name = a.name;
+// // //   let averagefunc = (b) => {
+// // //     let tot = 0;
+// // //     for (i = 0; i < b.length; i++) {
+// // //       tot += b[i];
+// // //     }
+// // //     // console.log(tot/b.length)
+// // //     return tot / b.length;
+// // //   };
+// // //   newStudent.avg = averagefunc(a.scores);
+// // //   return newStudent;
+// // // };
 
-// capital=(num)=>{
-//   return num.toUpperCase()
+// // avgMarks = students.map((a) => {
+// //   var newStudent = {};
+// //   newStudent.name = a.name;
+// //   let averagefunc = (b) => {
+// //     let tot = 0;
+// //     for (i = 0; i < b.length; i++) {
+// //       tot += b[i];
+// //     }
+// //     return tot / b.length;
+// //   };
+// //   newStudent.avg = averagefunc(a.scores);
+// //   return newStudent;
+// // });
 
-// }
-// var arr=names.map(capital)
-// // console.log(arr)
+// // console.log(avgMarks);
 
-// var employee=[
+// // var finalList = avgMarks.filter((a) => {
+// //   return a.avg >= 90;
+// // });
+
+
+// var npromise = new Promise ( (resolve, reject) =>
+// {
+//   var match=true
+//   if(match)
 //   {
-//       name: "Angelina Jolie",
-//       age: 80
-//   },
-//   {
-//       name: "Eric Jones",
-//       age: 2
-//   },
-//   {
-//       name: "Paris Hilton",
-//       age: 5
-//   },
-//   {
-//       name: "Kayne West",
-//       age: 16
-//   },
-//   {
-//       name: "Bob Ziroll",
-//       age: 100
+//     resolve("this is success")
 //   }
-// ]
+//   else{
+//     reject("this is fail")
+//   }
+// })
 
-// namesOnly=(obj)=>{
-//   return obj.name
-// }
+// console.log(npromise)
 
-// var nums=employee.map(namesOnly)
 
-// // console.log(nums)
 
-const students = [
-  { name: "Alice", scores: [90, 85, 92] },
-  { name: "Bob", scores: [75, 80, 85] },
-  { name: "Charlie", scores: [90, 95, 85] },
-  { name: "David", scores: [100, 100, 100] },
-]; // Use map to calculate the average test score for each student
-// Use filter to only select students with an average above 90
-
-// findScore=(a)=>{
-//     var total=0
-//       for(i=0;i<a.length;i++)
-//       {
-//         total=total+a[i]
-//       }
-//       return total/a.length
-// }
-
-// findScore = (a) => {
-//   var newStudent = {};
-//   newStudent.name = a.name;
-//   let averagefunc = (b) => {
-//     let tot = 0;
-//     for (i = 0; i < b.length; i++) {
-//       tot += b[i];
+// let countValue = new Promise( (resolve, reject)=> {
+//   const count = true;
+//     if (count) {
+//         resolve("There is a count value.");
+//     } else {
+//         reject("There is no count value");
 //     }
-//     // console.log(tot/b.length)
-//     return tot / b.length;
-//   };
-//   newStudent.avg = averagefunc(a.scores);
-//   return newStudent;
-// };
+// });
 
-avgMarks = students.map((a) => {
-  var newStudent = {};
-  newStudent.name = a.name;
-  let averagefunc = (b) => {
-    let tot = 0;
-    for (i = 0; i < b.length; i++) {
-      tot += b[i];
-    }
-    return tot / b.length;
-  };
-  newStudent.avg = averagefunc(a.scores);
-  return newStudent;
+// console.log(countValue);
+
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 1;
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
 });
 
-console.log(avgMarks);
-
-var finalList = avgMarks.filter((a) => {
-  return a.avg >= 90;
-});
-
-console.log(finalList);
+myPromise
+  .then((result)=>{
+    console.log(result)
+  })
+  .then(()=>{
+    console.log("completed")
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
