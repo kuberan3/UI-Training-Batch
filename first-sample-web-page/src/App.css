@@ -83,3 +83,9 @@ main{
 #elements > p{
   font-weight: 600;
 }
+
+#sampletask{
+  width: 500px;
+  height: 500px;
+  
+}
