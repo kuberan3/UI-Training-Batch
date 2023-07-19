@@ -87,5 +87,12 @@ main{
 #sampletask{
   width: 500px;
   height: 500px;
-  
+}
+/* #photoDiv{
+  width:200px;
+  height: 200x;
+} */
+#photoDiv > img{
+  width: 100px;
+  height: 100px;
 }
