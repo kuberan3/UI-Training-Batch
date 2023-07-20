@@ -3,15 +3,51 @@ header {
   
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  /* font-size: calc(10px + 2vmin); */
   color: white;
   justify-content: space-between;
   height: 10vh;
   width: 100vw;
   margin: auto;
 }
-#header-left{
+#name{
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+#submitBtn{
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#review{
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 40px;
+  
+}
+#ratings{
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 45px;
+  margin-bottom: 10px;
+}
+#location{
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+#submitBtn{
+  display: none;
+} 
+ #header-left{
   display: flex;
   height: 100%;
   align-items: center;
@@ -26,6 +62,13 @@ header {
   font-weight: 700;
   color: rgb(84,213,247);
   
+}
+#dataCard{
+  width: 70vw;
+  display: flex;
+  margin: 10px;
+  border: 1px solid black;
+  margin-left: 250px;
 }
 #header-right {
   display: flex;
@@ -75,6 +118,9 @@ main{
   background-color: rgb(0,180,247);
   margin: 10px;
 }
+#deleteBtn{
+  margin-bottom: 10px;
+}
 #person{
   border-radius: 100%;
   width: 70%;
@@ -88,11 +134,32 @@ main{
   width: 500px;
   height: 500px;
 }
+#photDiv{
+  margin-right: 100px;
+}
 /* #photoDiv{
   width:200px;
   height: 200x;
 } */
 #photoDiv > img{
   width: 100px;
-  height: 100px;
+  height: 150px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#registerMainDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100dvw;
+  
+}
+#formDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 50%;
+  margin-left: 550px;
 }

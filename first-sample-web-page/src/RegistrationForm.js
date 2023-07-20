@@ -1,99 +1,156 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
-const RegistrationForm = ({ onSubmit }) => {
-    const InputComponent = styled.input`
-    border: 1px solid black;
-    padding: 10px;
-    border-radius:20px;
-    margin-bottom:10px;`
+import "./App.css";
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+const RegistrationForm = () => {
+  
+  const [user,setuser]=useState([])
 
-    
-
-  const [formData, setFormData] = useState({
+  const [formData,setFormData] = useState({
     name: '',
-    email: '',
-    mobile: '',
-    photo: null,
-    DoB: '',
-    rating:0,
-  });
-  const a=10;
+    location: '',
+    rating: 0,
+    photo:'https://cdn-icons-png.flaticon.com/512/266/266033.png',
+    review:'',
+})
+const [buttonStyle, setButtonStyle] = useState({});
+
+
   const handleChange = (e) => {
-    setFormData({
+      if(e.target.name === "name")
+      {
+        console.log("name clicked")
+          setButtonStyle({
+          display: 'block',
+      });
+      }
+        
+      
+    setFormData(()=>({
       ...formData,
       [e.target.name]: e.target.value,
-    });
+    }));
+    
   };
-  const handleImageChange=(e)=>{
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-               
-          setFormData({
-            ...formData,
-            photo: reader.result,
-          });
-        };
-        reader.readAsDataURL(file);
-      }
-  };
-
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+
+    setuser((prevData) => [...prevData, formData]);
+    setFormData({
+      name: '',
+      review: '',
+      rating: '',
+      photo:'https://cdn-icons-png.flaticon.com/512/266/266033.png',
+      location: '',
+    });
+    setButtonStyle({
+      display: 'none',
+  });
+  };
+  const locationArray = ['select City','chennai', 'Bangalore', 'kerala', 'villupuram'];
+  const ratingArray = ['Select Rating',1 , 1.5 , 2 , 2.5 , 3 , 3.5 , 4 , 4.5 , 5];
+
+  const handleDelete = (index) => {
+    const newData = [...user];
+    newData.splice(index, 1);
+    setuser(newData);
   };
 
+  const getStars = (props) => {
+    const starIcons = [];
+    console.log(props)
+    const roundedRating = Math.round(props * 2) / 2; 
+    for (let i = 1; i <= 5; i++) {
+      if (roundedRating >= i) {
+        starIcons.push(<FaStar key={i} color='#B59410' size="20px"/>);
+      } else if (roundedRating >= i - 0.5) {
+        starIcons.push(<FaStarHalfAlt key={i} color='#B59410' size="20px"/>);
+      } else {
+        starIcons.push(<FaRegStar key={i} color='#B59410' size="20px"/>);
+      }
+    }
+
+    return starIcons;
+  };
   return (
+    <div id='registerMainDiv'>
+      <div id='formDiv'>
     <form onSubmit={handleSubmit}>
-      <InputComponent
+       <label>
+          Name:
+        </label>
+      
+      <input
         type="text"
         name="name"
+        id='name'
         value={formData.name}
         onChange={handleChange}
         placeholder="Name"
+        required
       />
+      <br />
+       <label>
+          Location:
+        </label>
       
-      <InputComponent
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
-       <InputComponent
-        type="tel"
-        name="mobile"
-        value={formData.mobile}
-        onChange={handleChange}
-        placeholder="mobile"
-      />
-      <InputComponent
-        type="date"
-        name="DoB"
-        value={formData.DoB}
-        onChange={handleChange}
-        placeholder="Date of Birth"
-      />
-       <InputComponent
-        type="number"
-        name="rating"
-        value={formData.rating}
-        onChange={handleChange}
-        placeholder="Ratings"
-      />
+      <select id="location" name='location'  onChange={handleChange}>
+        {locationArray.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <br /> <label>
+          Rating:
+        </label>
+      <select placeholder='select city' id="ratings" name='rating'  onChange={handleChange}>
+        {ratingArray.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <br/>
+      <label>
+          Review:
+        </label>
+        
+     
+       <textarea  onChange={handleChange}
+        type="text"
+        name="review"
+        id='review'
+        value={formData.review}
       
-      {/* <InputComponent
-        type="file"
-        name="photo"
-        accept="image/*"
-        value={formData.photo}
-        onChange={handleChange}
-        placeholder="pphoto"
-      /> */}
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      <button type="submit">Submit</button>
+        placeholder="Review"
+      />
+       <br />
+      <button id='submitBtn' style={buttonStyle}  type="submit">Submit</button>
     </form>
+    </div>
+    <div>
+    
+     
+     { user.map((item,index) => {
+        return(
+          <div id='dataCard'>
+              <div>
+              <div id="photoDiv">     {item.photo && <img src={item.photo} alt="Uploaded" />}</div>
+              </div>
+              <div>
+              <p>Name-{item.name}</p>
+              <p>Lives In- {item.location}</p>
+              <div>Rating - {getStars(item.rating)} </div>
+              <p>Reviews - {item.review}</p>
+               <button id='deleteBtn' onClick={() => handleDelete(index)}>Delete</button>
+              </div>
+            </div>
+    )
+    })}
+    </div>
+    </div>
   );
 };
 
