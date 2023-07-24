@@ -1,4 +1,4 @@
-// // var c = 1.2343
+import axios from "axios"
 
 // // console.log(c.toFixed())
 
@@ -386,3 +386,7 @@
 //     }
 // console.log("hi kuberan")
 
+async fetchingData = () =>{
+   const responseData = await  axios .get('https://jsonplaceholder.typicode.com/users')
+   console.log(responseData.data);
+}
