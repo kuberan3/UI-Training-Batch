@@ -51,6 +51,7 @@ const AxiosSample = () => {
     .catch(error => {
       console.error('Error deleting data:', error);
     });
+     fetchingData();
   }
   const handleDeleteChange=(e)=>{
     setdeletingindex(e.target.value)
@@ -80,7 +81,6 @@ const AxiosSample = () => {
             return (
               
                 <h4>Id:{Users.id} Title: {Users.title}</h4>
-               
             )
         })
       }

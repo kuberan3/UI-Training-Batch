@@ -35,7 +35,7 @@ const ProductDiv = styled.div`
 `
 const LandingPage = styled.div`
 width: 100vw;
-margin-top: 100px;
+
 top: 0;
 bottom: 0;
 overflow: auto;
@@ -48,6 +48,7 @@ flex-wrap: wrap;
 const ProductContainer = () => {
 
     const [dataBase,setdataBase]= useState([])
+    const [toAdd,settoAdd]=useState({})
 
     const fetchingData = async () => {
        
@@ -66,11 +67,21 @@ const ProductContainer = () => {
             fetchingData()
         };
       }, []);
-    const handleDelete=(index)=>{
-        dataBase.splice(index,1)
-        setdataBase(dataBase)
-        console.log(index)
-        console.log(dataBase.length)
+    const handleAdd=(index)=>{
+
+     
+        // console.log(index)
+        settoAdd(dataBase[index])
+        axios.post('https://fakestoreapi.com/products/', toAdd)
+        .then(response => {
+          console.log('Response:', response.data);
+        })
+        .catch(error => {
+          // Handle errors here
+          console.error('Error sending data:', error);
+        });
+
+        
     }
 
     return ( 
@@ -83,7 +94,7 @@ const ProductContainer = () => {
                             <ProductPic src={product.image}></ProductPic>
                             <h5>{product.title.slice(0,32)}</h5>
                             <h4>Price : {product.price}</h4>
-                            <StyledButton onClick={()=>{handleDelete(index)}}>Buy</StyledButton>
+                            <StyledButton onClick={()=>{handleAdd(index)}}>Buy</StyledButton>
                         </ProductDiv>
                     ) 
                 })

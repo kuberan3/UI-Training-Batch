@@ -12,7 +12,7 @@ function SampleStore() {
   
   return (
     <div className="main">  
-    <Header />
+    {/* <Header /> */}
     <ProductContainer />
     <Footer />
     </div>

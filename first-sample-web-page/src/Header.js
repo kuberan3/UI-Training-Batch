@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./App.css";
 const Header = () => {
   return (
@@ -6,9 +7,13 @@ const Header = () => {
       <header>
         <div id="header-left">
           {/* <img src="https://www.andreasreiterer.at/wp-content/uploads/2017/11/react-logo-825x510.jpg" width="50px" height="50px" alt="logo"></img> */}
-          <a href="#sample">menu</a>
-          <a href="#sample">items</a>
-          <a href="#sample">Sample</a>
+          {/* <a href="#sample">Home</a>
+          <a href="#sample">Main</a>
+          <a href="#sample">Items</a> */}
+
+          <Link to="/" >Home</Link>
+          <Link to="/main">Main</Link>
+          <Link to="/item">Item</Link>
         </div>
         <div id="header-right">
           <h2>Sign In</h2>
