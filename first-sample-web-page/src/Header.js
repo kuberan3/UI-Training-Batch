@@ -14,6 +14,7 @@ const Header = () => {
           <Link to="/" >Home</Link>
           <Link to="/main">Main</Link>
           <Link to="/item">Item</Link>
+          {/* <Link to="/:id">About</Link> */}
         </div>
         <div id="header-right">
           <h2>Sign In</h2>

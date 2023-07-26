@@ -11,9 +11,9 @@ import SampleRating from "./SampleRating";
 const RouterSample = () => {
     return ( 
         <Router>
-            <div>
+            
                 <Header />
-                <Switch>
+                
                     <Route exact path="/">
                         <SampleStore />
                     </Route>
@@ -23,8 +23,10 @@ const RouterSample = () => {
                     <Route path="/item">
                         <Axioscrud/>
                     </Route>
-                </Switch>
-            </div>
+                    <Route path="/:id">
+                        <HomeSample />
+                    </Route>
+            
         </Router>
      );
 }
