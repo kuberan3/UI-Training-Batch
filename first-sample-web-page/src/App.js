@@ -6,6 +6,7 @@ import AxiosSample from "./AxiosSample";
 import Axioscrud from "./AxiosCrud";
 import RouterSample from "./RouterSample";
 import RegistrationForm from "./RegistrationForm";
+import Sample from "./sample";
 
 function App() { 
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <Axioscrud /> */}
       {/* <RegistrationForm /> */}
       <RouterSample />
+      {/* <Sample/> */}
     </div>
   );
 }

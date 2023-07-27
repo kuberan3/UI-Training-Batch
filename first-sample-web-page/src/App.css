@@ -1,5 +1,5 @@
 header {
-  background-color: black;
+  background-color: rgb(40,115,240);
   
   top: 0;
   left: 0;
@@ -59,15 +59,17 @@ header {
 }
 #header-left > a{
   padding: 20px;
-  background-color: blueviolet;
+  background-color: white;
   margin: 10px;
   height: 20px;
   text-decoration: none;
   font-size: large;
   font-weight: 700;
-  color: rgb(84,213,247);
+  color: black;
+  border-radius: 10px;
   
 }
+
 #dataCard{
   width: 650px;
   display: flex;

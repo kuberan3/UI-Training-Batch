@@ -53,7 +53,7 @@ const ProductContainer = () => {
     const fetchingData = async () => {
        
         try{
-            const responseData = await  axios.get('https://fakestoreapi.com/products/')
+            const responseData = await  axios.get('http://localhost:8000/data')
         setdataBase(responseData.data)
         }
         catch (error){
@@ -72,16 +72,31 @@ const ProductContainer = () => {
      
         // console.log(index)
         settoAdd(dataBase[index])
-        axios.post('https://fakestoreapi.com/products/', toAdd)
+        axios.post('http://localhost:8000/data', toAdd)
         .then(response => {
           console.log('Response:', response.data);
         })
         .catch(error => {
           // Handle errors here
           console.error('Error sending data:', error);
-        });
+        });        
+    }
 
-        
+
+    // const AddToCart=[]
+
+
+    const handleBuy=(product)=>{
+        // AddToCart.push(product)
+        // console.log(AddToCart)
+        axios.post('http://localhost:7000/data', product)
+        .then(response => {
+          console.log('Response:', response.data);
+        })
+        .catch(error => {
+          // Handle errors here
+          console.error('Error sending data:', error);
+        });      
     }
 
     return ( 
@@ -94,7 +109,7 @@ const ProductContainer = () => {
                             <ProductPic src={product.image}></ProductPic>
                             <h5>{product.title.slice(0,32)}</h5>
                             <h4>Price : {product.price}</h4>
-                            <StyledButton onClick={()=>{handleAdd(index)}}>Buy</StyledButton>
+                            <StyledButton onClick={()=>{handleBuy(product)}}>Buy</StyledButton>
                         </ProductDiv>
                     ) 
                 })

@@ -1,20 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./App.css";
-const Header = () => {
+const Header = (props) => {
+  
+
+  // console.log(functions)
   return (
     <div>
       <header>
         <div id="header-left">
-          {/* <img src="https://www.andreasreiterer.at/wp-content/uploads/2017/11/react-logo-825x510.jpg" width="50px" height="50px" alt="logo"></img> */}
-          {/* <a href="#sample">Home</a>
-          <a href="#sample">Main</a>
-          <a href="#sample">Items</a> */}
-
-          <Link to="/" >Home</Link>
-          <Link to="/main">Main</Link>
-          <Link to="/item">Item</Link>
-          {/* <Link to="/:id">About</Link> */}
+          <Link to="/home" >Home</Link>
+          <Link to="/buy"><img src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg" width="30px" height="30px"></img> Cart {props.data}</Link>
         </div>
         <div id="header-right">
           <h2>Sign In</h2>
