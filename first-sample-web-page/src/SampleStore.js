@@ -59,7 +59,7 @@ function SampleStore(props) {
      
       try{
           const responseData = await  axios.get('http://localhost:8000/data')
-      setdataBase(responseData.data)
+      setdataBase(responseData?.data)
       }
       catch (error){
           console.log(error)
@@ -79,7 +79,7 @@ function SampleStore(props) {
     <LandingPage>
             
     {
-        dataBase.map((product,index)=>{
+        dataBase?.map((product,index)=>{
             return(
                 <ProductDiv>
                     <ProductPic src={product.image}></ProductPic>

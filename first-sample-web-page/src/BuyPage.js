@@ -1,11 +1,21 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
+import "./App.css";
+import { styled } from "styled-components";
+import { PiShoppingCart } from "react-icons/pi";
+const EmptyDiv = styled.div`
+width: 100vw;
+height:70vh;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
 const BuyPage = (props) => {
     console.log(props)
-// const {pro,deleteFunction}=props;
       const sum = (arr) => {
         let total = 0;
-        arr.forEach((num) => {
+        arr?.forEach((num) => {
           total += num.price;
         });
         return total;
@@ -13,30 +23,48 @@ const BuyPage = (props) => {
     
 
       let TotalPrice=sum(props.data)     
-     const [Occurance,setOccurance]=useState(0)
+     const [Occurance,setOccurance]=useState(1)
      const [currentProduct,setcurrentProduct]=useState('')
      
+
+  const getUniqueData = (arr) => {
+    const countMap = new Map();
+    arr.forEach((item) => {
+      const id = item.id;
+      countMap.set(id, (countMap.get(id) || 0) + 1);
+    });
+
+    const uniqueData = arr.filter((item, index) => {
+      return index === arr.findIndex((obj) => obj.id === item.id);
+    });
+
+    return uniqueData.map((item) => ({
+      ...item,
+      occurrences: countMap.get(item.id),
+    }));
+  };
+
+  const uniqueData = getUniqueData(props.data);
+
+
     return ( 
         <div > { props.data.length > 0 ? (
                 <table>
         <thead>
             <tr>
             <th>Product Name</th>
-            <th>Quantity</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            {props.data?.map((product, index) => (
+            {uniqueData?.map((product, index) => (
             <tr key={index}>
-                
-                
                 <td>{product.title}</td>
-            
                 <td>{product.price}</td>
-                <td>{Occurance}</td>
-                <td><button onClick={()=>props.deleteFunction(index)}>Delete</button></td>
+                <td>{product.occurrences}</td>
+                <td><button onClick={()=>props.deleteFunction(product.id)}>Delete</button></td>
 
             </tr>
             ))}
@@ -45,9 +73,14 @@ const BuyPage = (props) => {
                 <td>Total</td>
                 <td> </td>
                 <td> {TotalPrice} </td>
+                <td></td>
          </tr>
     </table>
-        ) : ( <h1>No cart data</h1> )
+        ) : ( <EmptyDiv>
+             <h1> <PiShoppingCart/> No cart </h1>
+            
+        </EmptyDiv>
+         )
     }
         </div>
           

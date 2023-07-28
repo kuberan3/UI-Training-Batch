@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./App.css";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 const Header = (props) => {
-  
-
-  // console.log(functions)
   return (
     <div>
       <header>
         <div id="header-left">
           <Link to="/home" >Home</Link>
-          <Link to="/buy"><img src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg" width="30px" height="30px"></img> Cart {props.data}</Link>
+          <Link to="/buy"><HiOutlineShoppingCart/> Cart {props.data}</Link>
         </div>
         <div id="header-right">
           <h2>Sign In</h2>
