@@ -1,79 +1,109 @@
 import { useSelector,useDispatch } from "react-redux";
 import { storeFormValues } from "../redux";
 import { useState } from "react";
+import { styled } from "styled-components";
+
+const DataCard=styled.div`
+width:300px;
+height:200px;
+padding: 10px;
+border-radius: 25px;
+border:0.01px solid black;
+box-shadow: 5px 10px  #888888;
+padding:10px;
+margin:10px;
+display:flex;
+flex-direction:column;
+`
+const Div = styled.div`
+display:flex;
+flex-wrap:wrap;`
+
+const Button = styled.button`
+padding:10px;
+margin:10px;
+width:100px;
+height:30px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: skyblue;
+border: none;
+border-radius: 15px;
+box-shadow: 0 2px #999;`
 
 const FormDataDisplayer=()=>{
 
     const userData = useSelector((state) => state?.form?.formData);
     const dispatch=useDispatch();
-  
-    const handleDelete=(index)=>{
-        const newArr=userData.filter((item, Index) => Index !== index)
-        dispatch(storeFormValues(newArr))
-    }
     const [editIndex,seteditIndex]=useState(null)
 
+    const handleDelete=(index)=>{
+        
+        const newArr=userData?.filter((item, Index) => Index !== index)
+        dispatch(storeFormValues(newArr))
+    }
+
     const handleEdit=(index)=>{
+        
         seteditIndex(index)
     }
-    const handleSave=()=>{
+
+    const handleSave=(index)=>{
+        
         seteditIndex(null)
-        console.log("ind",editIndex)
-        console.log(EditData)
+        dispatch(storeFormValues([...userData?.slice(0, index), changingData, ...userData?.slice(index + 1)]))
+        
     }
-    // const [EditData,setEditData]=useState({})
-    const handleChange=(event)=>{
-        const { name, value } = event.target;
-    setEditData({ ...EditData, [name]: value });
-    console.log(EditData)
+
+    const [changingData, setchangingData] = useState({
+        name: "",
+        email: "",
+      });
+    const handleChange=(e)=>{
+        e.preventDefault();
+        const { name, value } = e.target;
+        setchangingData({ ...changingData, [name]: value });
+        
     }
-    const [EditEmail,setEditEmail]=useState()
-    const [EditName,setEditName]=useState()
-    const [EditData,setEditData]=useState({
-        name: {EditName},
-        email:{EditEmail}
-    })
 
     return (
-        <table>
+        <Div>
         {
         userData?.map((data,index) => (
-            <tr>
-                <td>
+            <DataCard>
                     {
                         index === editIndex ? (
                             <input
                                 name="name"
-                                onChange={(e)=>{setEditName(e.target.value)}}
-                                value={data.name || ''}
-                            ></input>
-                        ):(data?.name)
+                                onChange={handleChange}
+                                // value={data?.name || ''}
+                            />
+                        ):(<p>Name:{data?.name}</p>)
                     }
-                </td>
-                <td>
+                
+                
                      {
                         index === editIndex ? (
                             <input
                             name="email"
-                            onChange={()=>handleChange}
-                                value={data.email || ''}
-                            ></input>
-                        ):(data?.email)
+                            onChange={handleChange}
+                                // value={data?.email || ''}  
+                            />
+                        ):( <p>Email:{data?.email}</p>)
                     }
-                </td>
-                <td>
                     {index === editIndex?(
-                         <button onClick={handleSave}>Save</button>
-                    ):(<button onClick={()=>handleDelete(index)}>Delete</button>)
+                         <Button onClick={()=>handleSave(index)}>Save</Button>
+                         ):(<Button onClick={()=>handleDelete(index)}>Delete</Button>)
                     }
-                </td>
-                <td>
-                    <button onClick={()=>handleEdit(index)}>Edit</button>
-                </td>
-            </tr>
-        ))
+                    <Button onClick={()=>handleEdit(index)}>Edit</Button>
+        
+        </DataCard>
+        ))  
         }
-      </table>
+      </Div>
 
         )
  }

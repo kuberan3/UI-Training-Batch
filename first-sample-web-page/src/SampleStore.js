@@ -85,7 +85,7 @@ function SampleStore(props) {
                     <ProductPic src={product.image}></ProductPic>
                     <h5>{product.title.slice(0,32)}</h5>
                     <h4>Price : {product.price}</h4>
-                    <StyledButton    onClick={()=>onClickHandler(product)}>Add To Cart</StyledButton>
+                    <StyledButton onClick={()=>onClickHandler(product)}>Add To Cart</StyledButton>
                 </ProductDiv>
             ) 
         })

@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { storeFormValues } from "../redux";
 import { useDispatch, useSelector } from "react-redux";
+import { styled } from "styled-components";
+
+
+const InputDiv=styled.div
+`
+width:100vw;
+height:10vh;
+display:flex;
+align-item:center;
+justify-content:center;
+`
 
 const MyForm = ({ storeFormValues }) => {
   const dispatch = useDispatch();
@@ -11,7 +22,6 @@ const MyForm = ({ storeFormValues }) => {
     name: "",
     email: "",
   });
-console.log(userData)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setformData({ ...formData, [name]: value });
@@ -25,6 +35,8 @@ console.log(userData)
 
   return (
     <div>
+      <InputDiv>
+     
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -41,6 +53,7 @@ console.log(userData)
 
         <button type="submit">Submit</button>
       </form>
+      </InputDiv>
     </div>
   );
 };
