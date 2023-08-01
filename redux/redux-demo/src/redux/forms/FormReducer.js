@@ -1,16 +1,14 @@
-import { FORM_SUBMIT } from "./FormTypes"
-const initialState ={
-    name: 'kuberan'
-}
+const initialState = {
+  formData: [],
+};
 
-const FormReducer = (state=initialState,action)=>{
-    switch(action.type){
-        case FORM_SUBMIT: return {
-            ...state,
-            name:e.target.value
-        }
-        default: return state
-    }
-}
+const formReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "STORE_FORM_VALUES":
+      return { ...state, formData:action.payload };
+    default:
+      return state;
+  }
+};
 
-export default FormReducer
+export default formReducer;

@@ -1,28 +1,48 @@
-import { useState } from "react";
-import { formSubmit } from "../redux";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import { storeFormValues } from "../redux";
 import { useDispatch, useSelector } from "react-redux";
 
-const   FormContainer  = (props) => {
-    const [u_name,setu_name]=useState
-    const dispatch=useDispatch()
-    const givenName=useSelector(state => state.form.name)
-    
+const MyForm = ({ storeFormValues }) => {
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state?.form?.formData);
+ 
+  const [formData, setformData] = useState({
+    name: "",
+    email: "",
+  });
+console.log(userData)
   const handleInputChange = (e) => {
-    setu_name(e.target.value)
+    const { name, value } = e.target;
+    setformData({ ...formData, [name]: value });
   };
-  const handleSubmit =()=>{
-    e.preventDefault();
-    storeFormValues(formData);
-  }
-    return ( 
-        <div>
-            <h2>Number of Cake - {givenName}</h2>
-            <form onSubmit={handleSubmit}>
-            <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
-            </form>
-        </div>
-     );
-}
 
-export default FormContainer
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   
+    dispatch(storeFormValues(userData.concat(formData)));
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+        />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default connect(null, { storeFormValues })(MyForm);
