@@ -21,6 +21,7 @@ export const fetchData = () => {
       .get(API_URL)
       .then((response) => {
         dispatch(fetchDataSuccess(response.data));
+       
       })
       .catch((error) => {
         dispatch(fetchDataFailure(error.message));

@@ -5,7 +5,7 @@ import IceContainer from './components/IceContainer';
 import FormContainer from './components/formContainer';
 import FormDataDisplayer from './components/FormDataDisplayer';
 import store from './redux/Store';
-
+import UserDataDisplayer from './components/UserDtataDisplayer';
 
 function App() {
   return (
@@ -15,8 +15,9 @@ function App() {
             {/* <IceContainer/> */}
            {/* <CakeContainer /> */}
            
-            <FormContainer/>
-           <FormDataDisplayer/>
+            {/* <FormContainer/> */}
+           {/* <FormDataDisplayer/> */}
+           <UserDataDisplayer/>
          </div>
         </Provider>
       </div>
