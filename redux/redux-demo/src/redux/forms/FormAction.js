@@ -4,4 +4,9 @@ export const storeFormValues = (formData) => {
       payload: formData,
     };
   };
-  
+  export const storeDeletedValues = (index) =>{
+    return {
+      type: 'STORE_DELETED_VALUES',
+      payload: {index}
+    }
+  }
