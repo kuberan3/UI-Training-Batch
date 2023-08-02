@@ -1,20 +1,15 @@
 import './App.css';
 import CakeContainer from './components/CakeContainer';
 import { Provider } from 'react-redux';
-import store from './redux/Store';
 import IceContainer from './components/IceContainer';
 import FormContainer from './components/formContainer';
 import FormDataDisplayer from './components/FormDataDisplayer';
-import { styled } from 'styled-components';
-
-const Div=styled.div`
-width:100vw;
-height:100vh`
+import store from './redux/Store';
 
 
 function App() {
   return (
-    <Div>
+      <div>
         <Provider store={store}>
            <div className="App">
             {/* <IceContainer/> */}
@@ -24,7 +19,7 @@ function App() {
            <FormDataDisplayer/>
          </div>
         </Provider>
-        </Div>        
+      </div>
     
   );
 }
