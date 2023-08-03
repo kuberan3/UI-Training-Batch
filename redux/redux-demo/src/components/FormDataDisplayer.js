@@ -4,6 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { storeDeletedValues } from "../redux/forms/FormAction";
 
+// import 'antd/dist/antd.css'
 const DataCard = styled.div`
   width: 300px;
   height: 200px;
@@ -79,7 +80,7 @@ const FormDataDisplayer = () => {
               value={changingName}
             />
           ) : (
-            <p>Name:{data?.name}</p>
+            <p><strong>NAME:</strong>{data?.name}</p>
           )}
           {index === editIndex ? (
             <input
@@ -88,14 +89,19 @@ const FormDataDisplayer = () => {
               value={changingEmail}
             />
           ) : (
-            <p>Email:{data?.email}</p>
+            <p><strong>E-Mail:</strong>{data?.email}</p>
           )}
           {index === editIndex ? (
-            <Button onClick={() => handleSave(index)}>Save</Button>
+            <Button type="primary" onClick={() => handleSave(index)}>Save</Button>
           ) : (
-            <Button onClick={() => handleDelete(index)}>Delete</Button>
+            <Button type="primary" onClick={() => handleDelete(index)}>Delete</Button>
           )}
-          <Button onClick={() => handleEdit(index)}>Edit</Button>
+          {
+            index === editIndex ? (
+              <p></p>
+            ):(<Button type="primary"  onClick={() => handleEdit(index)}>Edit</Button>)
+          }
+         
         </DataCard>
       ))}
     </Div>
