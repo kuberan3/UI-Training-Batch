@@ -13,15 +13,6 @@ const rootReducer=combineReducers({
     user:dataReducer
 })
 
-// const store = createStore(rootReducer)
-
-
-// export default store
-
-
-// import rootReducer from './userDataFetch/userDataReducer';
-
-
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)));
 
 export default store;

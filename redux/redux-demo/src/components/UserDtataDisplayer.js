@@ -1,29 +1,31 @@
-// import { useSelector, useDispatch } from "react-redux";
-// const UserDataDisplayer = () => {
-//     const userData = useSelector((state) => state?.user);
-//     console.log(userData)
-//     return ( 
-//         <div>
-            
-//         </div>
-//      );
-// }
- 
-// export default UserDataDisplayer;
-// DataDisplay.js
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../redux/userDataFetch/userDataAction';
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData, postData } from "../redux/userDataFetch/userDataAction";
+import { Button } from 'antd';
+import { styled } from "styled-components";
+import BurstButton from "./Buttonburst";
 const DataDisplay = () => {
   const dispatch = useDispatch();
+
+  const [userData, setUsers] = useState([]);
+const Btn=styled(Button)`
+  background-color: red;
+  `
   const data = useSelector((state) => state?.user?.data);
   const loading = useSelector((state) => state?.user?.data?.loading);
   const error = useSelector((state) => state?.user?.data?.error);
+
   useEffect(() => {
-    // Dispatch the fetchData action when the component mounts
+    if (data?.length > 0) setUsers(data);
+  }, [data]);
+  useEffect(() => {
     dispatch(fetchData());
-  }, [dispatch]);
+  }, []);
+
+  const handlePost = () => {
+    const abc = "kuberan";
+    dispatch(postData({ name: abc }));
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -36,19 +38,25 @@ const DataDisplay = () => {
   if (!data) {
     return <div>No data to display.</div>;
   }
-
   return (
     <div>
+      <Btn type="primary"
+        onClick={() => {
+          handlePost();
+        }}
+      >
+        Add data
+      </Btn>
+    
       <h2>Data from API:</h2>
       <ul>
-        {data?.map((item) => (
-          <>
-          <li key={item.id}>{item.name}</li>
-          <li>{item.email}</li>
-          </>
-          
-          
-        ))}
+        {userData &&
+          userData?.map((item) => (
+            <>
+              <li key={item.id}>{item.name}</li>
+              {/* <li>{item.email}</li> */}
+            </>
+          ))}
       </ul>
     </div>
   );

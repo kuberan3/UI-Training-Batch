@@ -66,7 +66,6 @@ const MyForm = ({ storeFormValues }) => {
   return (
     <div>
       <InputDiv>
-     
       <Form onSubmit={handleSubmit}>
         <Input
           type="text"

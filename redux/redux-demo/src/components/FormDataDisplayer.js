@@ -3,7 +3,6 @@ import { storeFormValues } from "../redux";
 import { useState } from "react";
 import styled from "styled-components";
 import { storeDeletedValues } from "../redux/forms/FormAction";
-
 // import 'antd/dist/antd.css'
 const DataCard = styled.div`
   width: 300px;
@@ -21,7 +20,6 @@ const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-
 const Button = styled.button`
   padding: 10px;
   margin: 10px;
@@ -68,7 +66,6 @@ const FormDataDisplayer = () => {
   };
   const [changingName, setchangingName] = useState("");
   const [changingEmail, setchangingEmail] = useState("");
-  console.log("hi")
   return (
     <Div>
       {userData?.map((data, index) => (

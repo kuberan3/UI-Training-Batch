@@ -1,0 +1,27 @@
+/* Adjust the styles according to your preference */
+
+.burst-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .burst-button.burst {
+    animation: burstAnimation 1s ease;
+  }
+  
+  @keyframes burstAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(10);
+      opacity: 0;
+    }
+  }
+  

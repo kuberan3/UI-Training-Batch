@@ -1,12 +1,12 @@
-import { BUY_CAKE,CANCEL_CAKE } from "./CakeTypes"
+// import { BUY_CAKE,CANCEL_CAKE } from "./CakeTypes"
 
 export const buyCake=()=>{
     return {
-        type: BUY_CAKE
+        type: 'BUY_CAKE'
     }
 }
 export const cancelCake=()=>{
     return {
-        type: CANCEL_CAKE
+        type: 'CANCEL_CAKE'
     }
 }

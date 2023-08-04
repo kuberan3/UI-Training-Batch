@@ -15,9 +15,9 @@ function App() {
             {/* <IceContainer/> */}
            {/* <CakeContainer /> */}
            
-            <FormContainer/>
-           <FormDataDisplayer/>
-           <UserDataDisplayer/>
+             {/* <FormContainer/> */}
+           {/* <FormDataDisplayer/> */}
+           <UserDataDisplayer/> 
          </div>
         </Provider>
       </div>

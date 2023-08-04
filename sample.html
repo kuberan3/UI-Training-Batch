@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <title>
             Sample Site
@@ -42,4 +42,62 @@
         </div>
         <a href="#" target="_blank">hi</a>
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Table Data as CSV</title>
+</head>
+<body>
+  <table id="dataTable">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>28</td>
+      <td>New York</td>
+    </tr>
+    <tr>
+      <td>Jane</td>
+      <td>35</td>
+      <td>San Francisco</td>
+    </tr>
+    <!-- Add more data rows as needed -->
+  </table>
+
+  <button onclick="downloadAsCSV()">Download CSV</button>
+
+  <script>
+    function downloadAsCSV() {
+      const table = document.getElementById('dataTable');
+      const rows = table.querySelectorAll('tr');
+      const csvData = [];
+      
+      rows.forEach(row => {
+        const rowData = [];
+        const cells = row.querySelectorAll('td, th');
+        
+        cells.forEach(cell => {
+          rowData.push(cell.innerText);
+        });
+        
+        csvData.push(rowData.join(','));
+      });
+      
+      const csvString = csvData.join('\n');
+      const blob = new Blob([csvString], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'data.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
 </html>
