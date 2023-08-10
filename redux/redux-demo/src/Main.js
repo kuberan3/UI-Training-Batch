@@ -207,6 +207,7 @@ line-height: 0.1;
 
 const Section5=styled.div`
 width: 100vw;
+background-color: rgb(12,21,36);
 `
 
 const AccessDiv = styled.div`
@@ -333,6 +334,11 @@ const Main = () => {
                     </ProfileDiv>
                 </QuotesDiv>
             </Section4>
+            <Section5>
+                <AccessDiv>
+                    
+                </AccessDiv>
+            </Section5>
        </LandingPage>
      );
 }
