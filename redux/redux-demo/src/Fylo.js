@@ -213,8 +213,37 @@ background-color: rgb(12,21,36);
 const AccessDiv = styled.div`
 width: 700px;
 align-items: center;
+display:flex;
+flex-direction:column;
+background-color:blue;
+`
+const InputHeading=styled.p`
+font-size:25px;
 `
 
+const InputPara=styled.p`
+font-size:15px;
+`
+
+const InputBoxDiv=styled.div`
+width:80%;
+margin-bottom:30px;
+`
+const InputField= styled.input`
+width:400px;
+type:text;
+height:40px;
+`
+const InputButton=styled.button`
+
+width:100px;
+height:40px;
+`
+
+const Footer=styled.div`
+width:100vw;
+
+`
 
 const Main = () => {
     return ( 
@@ -336,9 +365,18 @@ const Main = () => {
             </Section4>
             <Section5>
                 <AccessDiv>
-                    
+                    <InputHeading>Get early access today</InputHeading>
+                    <InputPara>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any</InputPara>
+                    <InputPara>questions, our support team would be happy to help you.</InputPara>
+                    <InputBoxDiv>
+                            <InputField></InputField>
+                            <InputButton>Get Started For Free</InputButton>
+                    </InputBoxDiv>
                 </AccessDiv>
             </Section5>
+            <Footer>
+
+            </Footer>
        </LandingPage>
      );
 }
