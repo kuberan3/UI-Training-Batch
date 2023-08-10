@@ -22,10 +22,7 @@ const BuyPage = (props) => {
       };
     
 
-      let TotalPrice=sum(props.data)     
-     const [Occurance,setOccurance]=useState(1)
-     const [currentProduct,setcurrentProduct]=useState('')
-     
+      let TotalPrice=sum(props.data)  
 
   const getUniqueData = (arr) => {
     const countMap = new Map();

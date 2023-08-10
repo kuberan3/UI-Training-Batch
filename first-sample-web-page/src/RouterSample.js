@@ -19,16 +19,6 @@ const RouterSample = () => {
       };
      
       const handleDelete = (productId) => {
-
-        // const filterData = Datatopass?.filter((item,i) => i !== index);
-      // let i=0
-      //   if(  Datatopass?.find((Product,i)=>( Product.id===index; i= )))
-      //   {
-      //     console.log(i)
-      //   }
-       // setDatatopass(filterData);
-        // setproductCount(Datatopass.length-1)
-        
       let lable=0;
         Datatopass?.map((data,index)=>{
           if(data.id===productId && lable===0)
@@ -39,10 +29,6 @@ const RouterSample = () => {
               setproductCount(Datatopass.length-1)
           }
         })
-
-       
-      
-
       };
      
     return ( 
