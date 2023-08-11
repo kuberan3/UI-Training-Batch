@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(12,21,36);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.firstsvg{
+  width:176; 
+  height:52;
+  margin-top: 100px;
+  @media (max-width:400px) {
+    width: 60;
+    height: 15;
+  }
 }
